@@ -62,12 +62,12 @@ export default function Testimonials() {
   useGSAP(() => {
     gsap.fromTo(cardRef.current,
       { opacity: 0, x: 20 },
-      { opacity: 1, x: 0, duration: 0.55, ease: 'power2.out' }
+      { opacity: 1, x: 0, duration: 0.55, ease: 'power2.out', clearProps: 'all' }
     );
   }, [activeIndex]);
 
   return (
-    <section 
+    <section
       id="testimonials"
       className="py-20 md:py-28 bg-brand-cream-soft border-t border-brand-grey-light overflow-hidden"
     >
@@ -138,11 +138,10 @@ export default function Testimonials() {
             <button
               key={idx}
               onClick={() => setActiveIndex(idx)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                idx === activeIndex 
-                  ? 'bg-brand-green w-6' 
-                  : 'bg-brand-grey-light hover:bg-brand-grey'
-              }`}
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${idx === activeIndex
+                ? 'bg-brand-green w-6'
+                : 'bg-brand-grey-light hover:bg-brand-grey'
+                }`}
               aria-label={`Go to slide ${idx + 1}`}
             />
           ))}

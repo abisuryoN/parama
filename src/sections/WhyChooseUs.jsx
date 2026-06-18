@@ -22,7 +22,8 @@ export default function WhyChooseUs() {
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top 80%',
-        }
+        },
+        clearProps: 'all'
       }
     );
   }, { scope: containerRef });
@@ -51,7 +52,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section 
+    <section
       id="why-us"
       ref={containerRef}
       className="py-20 md:py-28 bg-brand-cream border-t border-brand-grey-light overflow-hidden"
@@ -69,7 +70,7 @@ export default function WhyChooseUs() {
         {/* Reason Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {reasons.map((reason, idx) => (
-            <div 
+            <div
               key={idx}
               className="why-card p-8 rounded-3xl bg-brand-cream-soft border border-brand-grey-light hover:border-brand-green/30 hover:shadow-lg transition-all duration-300 group text-left flex flex-col justify-between"
             >
@@ -78,12 +79,12 @@ export default function WhyChooseUs() {
                 <div className="w-14 h-14 rounded-2xl bg-brand-cream border border-brand-grey-light flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
                   {reason.icon}
                 </div>
-                
+
                 {/* Title */}
                 <h3 className="font-serif text-lg font-bold text-brand-dark mb-3">
                   {reason.title}
                 </h3>
-                
+
                 {/* Description */}
                 <p className="text-xs md:text-sm text-brand-grey leading-relaxed">
                   {reason.description}

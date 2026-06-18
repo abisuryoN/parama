@@ -11,7 +11,7 @@
   --color-brand-grey-light: #E4E7E4;
   --color-brand-dark: #1F2220;
   --color-brand-dark-soft: #2E3330;
-  
+
   --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
 }
@@ -23,7 +23,7 @@
     background-color: var(--color-brand-cream);
     color: var(--color-brand-dark);
   }
-  
+
   body {
     overflow-x: hidden;
     margin: 0;
@@ -54,7 +54,10 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }

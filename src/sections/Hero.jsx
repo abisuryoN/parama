@@ -14,18 +14,18 @@ export default function Hero() {
     // Fade up staggered animation for text content
     gsap.fromTo('.hero-text',
       { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: 'power4.out', delay: 0.1 }
+      { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: 'power4.out', delay: 0.1, clearProps: 'all' }
     );
 
     // Fade and slide in for the image mock-up
     gsap.fromTo('.hero-visual',
       { opacity: 0, x: 40, scale: 0.95 },
-      { opacity: 1, x: 0, scale: 1, duration: 1.2, ease: 'power3.out', delay: 0.3 }
+      { opacity: 1, x: 0, scale: 1, duration: 1.2, ease: 'power3.out', delay: 0.3, clearProps: 'all' }
     );
   }, { scope: containerRef });
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="relative min-h-[90vh] md:min-h-screen flex items-center pt-28 pb-16 md:py-24 overflow-hidden bg-brand-cream"
     >
@@ -64,20 +64,20 @@ export default function Hero() {
         </div>
 
         {/* Mockup Column */}
-        <div className="hero-visual lg:col-span-5 w-full flex items-center justify-center relative">
-          <div className="relative w-full max-w-md lg:max-w-none">
+        <div className="lg:col-span-5 w-full flex items-center justify-center relative">
+          <div className="hero-visual relative w-full max-w-md lg:max-w-none">
             {/* Elegant industrial shadow card wrapper */}
             <div className="absolute -inset-4 bg-brand-green/5 rounded-3xl filter blur-xl transform rotate-2 pointer-events-none"></div>
-            
+
             {/* Main Visual */}
-            <PlaceholderImage 
+            <PlaceholderImage
               text="Parama Heavy-Duty Tarpaulin T-120"
               aspect="aspect-[4/3] md:aspect-[4/3]"
               className="shadow-2xl border border-brand-grey-light"
             />
-            
+
             {/* Accent tag detailing tech spec */}
-            <div className="absolute -bottom-4 -left-4 bg-brand-dark text-brand-cream p-4 rounded-2xl shadow-xl border border-brand-grey/30 hidden sm:flex items-center gap-3">
+            <div className="absolute -bottom-4 -right-4 bg-brand-dark text-brand-cream p-4 rounded-2xl shadow-xl border border-brand-grey/30 hidden sm:flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-brand-green/20 flex items-center justify-center text-brand-green">
                 <span className="font-bold text-sm">T-120</span>
               </div>

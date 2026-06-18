@@ -21,7 +21,8 @@ export default function About() {
         scrollTrigger: {
           trigger: '.about-title',
           start: 'top 85%',
-        }
+        },
+        clearProps: 'all'
       }
     );
 
@@ -36,7 +37,8 @@ export default function About() {
         scrollTrigger: {
           trigger: '.about-content',
           start: 'top 80%',
-        }
+        },
+        clearProps: 'all'
       }
     );
 
@@ -52,7 +54,8 @@ export default function About() {
         scrollTrigger: {
           trigger: '.about-grid',
           start: 'top 80%',
-        }
+        },
+        clearProps: 'all'
       }
     );
   }, { scope: sectionRef });
@@ -81,8 +84,8 @@ export default function About() {
   ];
 
   return (
-    <section 
-      id="about" 
+    <section
+      id="about"
       ref={sectionRef}
       className="py-20 md:py-28 bg-brand-cream border-t border-brand-grey-light overflow-hidden"
     >
@@ -109,7 +112,7 @@ export default function About() {
             <p className="text-sm md:text-base text-brand-grey leading-relaxed mb-8">
               Fokus utama kami terletak pada integritas material dan kepresisian ukuran. Dengan perpaduan serat sintetis premium dan formulasi karet protektif, terpal kami siap memberikan kenyamanan alas tidur yang tangguh di segala kondisi cuaca.
             </p>
-            
+
             {/* Quote block */}
             <div className="border-l-4 border-brand-green pl-6 py-2 bg-brand-cream-soft rounded-r-xl">
               <p className="italic text-sm text-brand-dark font-medium leading-relaxed">
@@ -125,7 +128,7 @@ export default function About() {
           <div className="lg:col-span-6">
             <div className="about-grid grid grid-cols-1 sm:grid-cols-2 gap-6">
               {features.map((feature, idx) => (
-                <div 
+                <div
                   key={idx}
                   className="about-card p-6 rounded-2xl bg-brand-cream-soft border border-brand-grey-light hover:border-brand-green/35 hover:shadow-lg transition-all duration-300 group text-left"
                 >

@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-brand-dark text-brand-cream/80 pt-16 pb-8 border-t border-brand-grey/20 font-sans">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 pb-12 border-b border-brand-grey/15">
-        
+
         {/* Branding Column */}
         <div className="md:col-span-5 text-left flex flex-col items-start">
           <a href="#" className="flex items-center gap-2 group mb-5">
@@ -22,27 +22,27 @@ export default function Footer() {
             Spesialis terpal alas matras berkualitas premium. Melindungi kasur Anda dari kelembapan, air, noda, dan jamur dengan standar proteksi industrial tinggi.
           </p>
           <div className="flex gap-3">
-            <a 
-              href="https://www.instagram.com/paramaterpal" 
-              target="_blank" 
+            <a
+              href="https://www.instagram.com/paramaterpal"
+              target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 rounded-full bg-brand-dark-soft border border-brand-grey/30 flex items-center justify-center text-brand-cream hover:bg-brand-green hover:border-brand-green transition-all duration-300 active:scale-95"
               aria-label="Instagram Link"
             >
               <Instagram size={16} />
             </a>
-            <a 
-              href="https://www.threads.net/@paramaterpal" 
-              target="_blank" 
+            <a
+              href="https://www.threads.net/@paramaterpal"
+              target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 rounded-full bg-brand-dark-soft border border-brand-grey/30 flex items-center justify-center text-brand-cream hover:bg-brand-green hover:border-brand-green transition-all duration-300 active:scale-95 font-bold text-sm leading-none"
               aria-label="Threads Link"
             >
               @
             </a>
-            <a 
-              href="https://wa.me/628123456789" 
-              target="_blank" 
+            <a
+              href="https://wa.me/628123456789"
+              target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 rounded-full bg-brand-dark-soft border border-brand-grey/30 flex items-center justify-center text-brand-cream hover:bg-brand-green hover:border-brand-green transition-all duration-300 active:scale-95"
               aria-label="WhatsApp Link"
