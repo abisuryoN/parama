@@ -6,12 +6,12 @@ import React from 'react';
  */
 export default function PlaceholderImage({ 
   className = '', 
-  text = 'Parama Terpal Material', 
+  text = 'Parama Grounding Sheet', 
   aspect = 'aspect-video' 
 }) {
   return (
     <div className={`relative overflow-hidden rounded-2xl bg-brand-cream-soft border border-brand-grey-light select-none group w-full ${aspect} ${className}`}>
-      {/* Background Texture Grid mimicking canvas weave */}
+      {/* Background Texture Grid mimicking grounding sheet texture */}
       <svg className="absolute inset-0 w-full h-full text-brand-grey/15" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
         <defs>
           <pattern id="grid-pattern" width="16" height="16" patternUnits="userSpaceOnUse">
@@ -27,7 +27,7 @@ export default function PlaceholderImage({
         <rect width="100%" height="100%" fill="url(#grad)" />
       </svg>
       
-      {/* Visual decorative lines representing industrial design blueprints */}
+      {/* Visual decorative lines representing geometric alignment and mindfulness flow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[85%] h-[85%] border border-dashed border-brand-grey/20 rounded-lg flex items-center justify-center">
           <div className="w-[95%] h-[95%] border border-brand-grey/10 rounded-sm flex items-center justify-center">
@@ -42,14 +42,14 @@ export default function PlaceholderImage({
       {/* Text label overlay */}
       <div className="absolute bottom-4 left-4 right-4 z-10 flex flex-col items-start">
         <span className="text-[10px] tracking-wider uppercase font-semibold text-brand-green opacity-80 mb-0.5">
-          PARAMA SPEC-V.4
+          PARAMA GROUNDING
         </span>
         <span className="text-sm font-medium text-brand-dark opacity-90 transition-transform duration-500 group-hover:translate-x-1">
           {text}
         </span>
       </div>
       
-      {/* Corner indicators mirroring precision industrial layout */}
+      {/* Corner indicators mirroring precision alignment */}
       <div className="absolute top-3 left-3 w-2 h-2 border-t border-l border-brand-grey/60"></div>
       <div className="absolute top-3 right-3 w-2 h-2 border-t border-r border-brand-grey/60"></div>
       <div className="absolute bottom-3 left-3 w-2 h-2 border-b border-l border-brand-grey/60"></div>

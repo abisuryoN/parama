@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { ShieldCheck, Flame, BadgePercent, Navigation, MessageCircle, HeartHandshake } from 'lucide-react';
+import { ShieldCheck, Droplets, Sparkles, Compass, Layers, Heart, Wind, Zap } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -17,7 +17,7 @@ export default function WhyChooseUs() {
         opacity: 1,
         y: 0,
         duration: 0.8,
-        stagger: 0.15,
+        stagger: 0.1,
         ease: 'power2.out',
         scrollTrigger: {
           trigger: containerRef.current,
@@ -30,24 +30,44 @@ export default function WhyChooseUs() {
 
   const reasons = [
     {
+      icon: <Droplets size={28} className="text-brand-green" />,
+      title: 'Waterproof Protection',
+      description: 'Fully impervious to moisture, preventing damp grass, morning dew, or wet sand from seeping through.'
+    },
+    {
+      icon: <Wind size={28} className="text-brand-green" />,
+      title: 'Lightweight & Portable',
+      description: 'Extremely light and compact, allowing you to easily carry it along with your yoga mat.'
+    },
+    {
+      icon: <Layers size={28} className="text-brand-green" />,
+      title: 'Easy to Fold',
+      description: 'Designed for quick folding and seamless packing, fitting easily into any standard gym or tote bag.'
+    },
+    {
+      icon: <Sparkles size={28} className="text-brand-green" />,
+      title: 'Easy to Clean',
+      description: 'Dirt, grass, and mud wipe off effortlessly with a damp cloth, keeping maintenance quick and simple.'
+    },
+    {
+      icon: <Compass size={28} className="text-brand-green" />,
+      title: 'Outdoor Ready',
+      description: 'Engineered to withstand various outdoor terrains, from soft lawns and beaches to rocky soil.'
+    },
+    {
       icon: <ShieldCheck size={28} className="text-brand-green" />,
-      title: 'Material Berkualitas',
-      description: 'Serat sintetis berlapis PVC ganda dengan formula anti bocor, tahan jamur, dan awet digunakan bertahun-tahun.'
+      title: 'Comfortable Ground Layer',
+      description: 'Creates a smooth and sanitary boundary between your premium yoga mat and the natural ground.'
     },
     {
-      icon: <BadgePercent size={28} className="text-brand-green" />,
-      title: 'Harga Kompetitif',
-      description: 'Nilai investasi terbaik dengan harga bersaing langsung dari manufaktur berkualitas tanpa perantara.'
+      icon: <Zap size={28} className="text-brand-green" />,
+      title: 'Durable Material',
+      description: 'High-quality craftsmanship using tear-resistant fabrics to ensure long-lasting performance.'
     },
     {
-      icon: <Navigation size={28} className="text-brand-green" />,
-      title: 'Pengiriman Aman',
-      description: 'Pengemasan terpal digulung rapi menggunakan proteksi tebal untuk menghindari lipatan mati atau kerusakan saat transit.'
-    },
-    {
-      icon: <HeartHandshake size={28} className="text-brand-green" />,
-      title: 'Pelayanan Responsif',
-      description: 'Layanan konsultasi ukuran kustom dan respon chat sigap untuk menjamin kepuasan pembelian Anda.'
+      icon: <Heart size={28} className="text-brand-green" />,
+      title: 'Designed for Yogis',
+      description: 'Specifically created to support your outdoor flows, retreats, and mindfulness practices in nature.'
     }
   ];
 
@@ -57,12 +77,12 @@ export default function WhyChooseUs() {
       ref={containerRef}
       className="py-20 md:py-28 bg-brand-cream border-t border-brand-grey-light overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[90%] w-full mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-          <span className="text-xs font-bold uppercase tracking-widest text-brand-green">Keunggulan</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-brand-green">Advantages</span>
           <h2 className="font-serif text-3xl md:text-4xl font-bold tracking-tight text-brand-dark mt-2">
-            Mengapa Memilih Parama Terpal?
+            Why Choose Parama
           </h2>
           <div className="w-16 h-1 bg-brand-green mx-auto mt-4 rounded-full"></div>
         </div>

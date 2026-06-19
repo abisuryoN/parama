@@ -32,11 +32,11 @@ export default function Navbar() {
   }, { scope: containerRef });
 
   const navLinks = [
-    { label: 'Tentang Kami', href: '#about' },
-    { label: 'Produk', href: '#products' },
-    { label: 'Galeri', href: '#gallery' },
-    { label: 'Keunggulan', href: '#why-us' },
-    { label: 'Testimoni', href: '#testimonials' },
+    { label: 'About Us', href: '#about' },
+    { label: 'Our Product', href: '#products' },
+    { label: 'Gallery', href: '#gallery' },
+    { label: 'Advantages', href: '#why-us' },
+    { label: 'Testimonial', href: '#testimonials' },
   ];
 
   return (
@@ -47,14 +47,14 @@ export default function Navbar() {
         : 'bg-transparent py-6'
         }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      <div className="max-w-[90%] w-full mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="nav-item flex items-center gap-2 group">
           <div className="w-8 h-8 rounded-lg bg-brand-green flex items-center justify-center text-brand-cream font-bold text-lg select-none transition-transform duration-300 group-hover:rotate-12">
             P
           </div>
           <span className="font-serif text-xl font-bold tracking-tight text-brand-dark group-hover:text-brand-green transition-colors duration-300">
-            Parama<span className="font-sans text-xs uppercase tracking-widest text-brand-green font-semibold ml-1.5">Terpal</span>
+            PARAMA
           </span>
         </a>
 
@@ -73,7 +73,7 @@ export default function Navbar() {
             href="#contact"
             className="nav-item inline-flex items-center gap-1.5 bg-brand-dark text-brand-cream hover:bg-brand-green text-xs font-semibold uppercase tracking-wider px-5 py-2.5 rounded-full transition-colors duration-300 shadow-sm"
           >
-            Hubungi Kami
+            Contact Us
             <ArrowUpRight size={13} />
           </a>
         </nav>
@@ -107,7 +107,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
               className="inline-flex items-center justify-center gap-2 bg-brand-green text-brand-cream font-semibold uppercase text-sm tracking-wider py-4 rounded-xl mt-6 shadow-md"
             >
-              Hubungi Kami
+              Contact Us
               <ArrowUpRight size={16} />
             </a>
           </nav>

@@ -43,12 +43,12 @@ export default function FloatingCTA() {
           className="bg-brand-dark/95 backdrop-blur-md border border-brand-grey/30 rounded-2xl p-4 shadow-2xl w-60 text-brand-cream flex flex-col gap-2"
         >
           <div className="pb-2 border-b border-brand-grey/20 mb-1 flex items-center justify-between">
-            <span className="text-xs font-semibold uppercase tracking-wider text-brand-cream/60">Hubungi Kami</span>
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand-cream/60">Contact Us</span>
             <span className="text-[10px] bg-brand-green/80 text-brand-cream px-2 py-0.5 rounded-full font-medium">Online</span>
           </div>
 
           <a 
-            href="https://www.instagram.com/paramaterpal" 
+            href="https://www.instagram.com/parama.wellness" 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center justify-between p-2.5 rounded-xl hover:bg-brand-green transition-colors duration-200 group text-sm"
@@ -61,7 +61,7 @@ export default function FloatingCTA() {
           </a>
 
           <a 
-            href="https://www.threads.net/@paramaterpal" 
+            href="https://www.threads.net/@parama.wellness" 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center justify-between p-2.5 rounded-xl hover:bg-brand-green transition-colors duration-200 group text-sm"
@@ -74,7 +74,7 @@ export default function FloatingCTA() {
           </a>
 
           <a 
-            href="https://wa.me/628123456789" // Dummy WhatsApp link
+            href="https://wa.me/6281294924003" 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center justify-between p-2.5 rounded-xl hover:bg-brand-green transition-colors duration-200 group text-sm"

@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PlaceholderImage from '../components/PlaceholderImage';
 import Button from '../components/Button';
-import { Check, ShieldCheck, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Check, ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 export default function Products() {
   const containerRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [activeImage, setActiveImage] = useState(null);
 
   // Mobile slider state
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -48,44 +49,68 @@ export default function Products() {
 
   const productList = [
     {
-      id: 'lite',
-      name: 'Parama Lite Base (T-80)',
-      description: 'Ideal untuk kasur busa tipis, matras santai, atau kasur anak. Sangat lentur, ringan, dan praktis dilipat.',
-      thickness: '0.45mm Flexi-Shield',
-      benefits: [
-        'Material kuat & ringan',
-        'Mudah dibersihkan',
-        'Anti air & anti jamur',
-        'Nyaman untuk matras tipis'
+      id: 'black',
+      name: 'PARAMA BLACK',
+      description: 'Our premium grounding sheet, designed for yogis who seek extra durability and protection during outdoor practice.',
+      subtitle: 'Size: 190 cm × 75 cm | Extra Thick',
+      specifications: [
+        'Size: 190 cm × 75 cm',
+        'Thickness: Extra Thick',
+        'Water-resistant',
+        'Lightweight and foldable',
+        'Easy to clean',
+        'Suitable for grass, soil, sand, and outdoor surfaces'
       ],
-      placeholderText: 'Parama Lite Base T-80 Texture'
+      bestFor: 'Outdoor yoga, retreats, wellness events, and regular outdoor practice.',
+      placeholderText: 'Parama Black Grounding Sheet'
     },
     {
-      id: 'standard',
-      name: 'Parama Standard Shield (T-100)',
-      description: 'Pilihan terpopuler untuk pelindung kasur ukuran reguler. Perlindungan maksimal dengan kelenturan seimbang.',
-      thickness: '0.55mm Mid-Shield',
-      benefits: [
-        'Sangat kuat & tahan lama',
-        'Nyaman & menstabilkan posisi kasur',
-        'Tahan gesekan permukaan kasar',
-        '100% kedap cairan'
+      id: 'silver',
+      name: 'PARAMA SILVER',
+      description: 'A durable grounding sheet with enhanced thickness, offering reliable protection between your yoga mat and the ground.',
+      subtitle: 'Size: 190 cm × 75 cm | Extra Thick',
+      specifications: [
+        'Size: 190 cm × 75 cm',
+        'Thickness: Extra Thick',
+        'Water-resistant',
+        'Lightweight and easy to carry',
+        'Easy to wipe clean',
+        'Designed for outdoor use'
       ],
-      placeholderText: 'Parama Standard Shield T-100 Texture',
-      featured: true
+      bestFor: 'Yoga in parks, gardens, beaches, and outdoor community events.',
+      placeholderText: 'Parama Silver Grounding Sheet'
     },
     {
-      id: 'heavy',
-      name: 'Parama Heavy Guard (T-120)',
-      description: 'Alas matras heavy-duty untuk spring bed besar berat, matras medis, kargo kasur, atau alas matras outdoor.',
-      thickness: '0.65mm Ultra-Shield',
-      benefits: [
-        'Lapisan poliester ganda',
-        'Tahan sobek tingkat ekstrem',
-        'Proteksi kelembapan tinggi',
-        'Tingkat kekencangan industri'
+      id: 'navy',
+      name: 'PARAMA NAVY',
+      description: 'A lightweight grounding sheet that provides practical protection while remaining easy to pack and carry.',
+      subtitle: 'Size: 190 cm × 75 cm | Standard',
+      specifications: [
+        'Size: 190 cm × 75 cm',
+        'Thickness: Standard',
+        'Water-resistant',
+        'Foldable and compact',
+        'Easy to clean',
+        'Suitable for outdoor yoga and wellness activities'
       ],
-      placeholderText: 'Parama Heavy Guard T-120 Texture'
+      bestFor: 'Casual outdoor practice and everyday use.',
+      placeholderText: 'Parama Navy Grounding Sheet'
+    },
+    {
+      id: 'blue',
+      name: 'PARAMA BLUE',
+      description: 'A simple and functional grounding sheet designed to help keep your yoga mat cleaner during outdoor sessions.',
+      subtitle: 'Size: 190 cm × 75 cm | Standard',
+      specifications: [
+        'Size: 190 cm × 75 cm',
+        'Thickness: Standard',
+        'Water-resistant',
+        'Lightweight and portable',
+        'Easy to fold and store',
+        'Ideal for outdoor yoga and meditation'
+      ],
+      bestFor: 'Outdoor yoga, picnics, meditation, and community gatherings.',
+      placeholderText: 'Parama Blue Grounding Sheet'
     }
   ];
 
@@ -131,15 +156,15 @@ export default function Products() {
       ref={containerRef}
       className="py-20 md:py-28 bg-brand-cream-soft border-t border-brand-grey-light overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[90%] w-full mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-brand-green">Produk Kami</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-brand-green">Our Product</span>
           <h2 className="font-serif text-3xl md:text-4xl font-bold tracking-tight text-brand-dark mt-2">
-            Varian Terpal Alas Matras Unggulan
+            Our Product
           </h2>
           <p className="text-xs md:text-sm text-brand-grey mt-3 max-w-lg mx-auto">
-            Temukan spesifikasi alas terpal yang paling sesuai dengan ketebalan kasur dan kondisi ruangan Anda.
+            Choose the perfect grounding sheet to complement your outdoor yoga flow and wellness routine.
           </p>
           <div className="w-16 h-1 bg-brand-green mx-auto mt-4 rounded-full"></div>
         </div>
@@ -164,25 +189,26 @@ export default function Products() {
                       className="w-full shrink-0 px-2"
                     >
                       <div
-                        className={`product-card rounded-3xl p-6 flex flex-col justify-between border transition-all duration-500 bg-brand-cream relative ${product.featured
-                            ? 'border-brand-green/45 shadow-xl shadow-brand-green/5 ring-1 ring-brand-green/30'
-                            : 'border-brand-grey-light hover:border-brand-grey shadow-sm hover:shadow-md'
-                          }`}
+                        className="product-card rounded-3xl p-6 flex flex-col justify-between border transition-all duration-500 bg-brand-cream relative border-brand-grey-light hover:border-brand-green/30 shadow-sm hover:shadow-md"
                       >
-                        {product.featured && (
-                          <span className="absolute -top-3.5 left-8 bg-brand-green text-brand-cream text-[10px] uppercase font-bold tracking-widest px-4 py-1.5 rounded-full flex items-center gap-1 shadow-sm z-10">
-                            <ShieldCheck size={12} /> Terpopuler
-                          </span>
-                        )}
-
                         <div>
                           {/* Photo Container */}
-                          <div className="mb-6 relative overflow-hidden rounded-2xl">
-                            <PlaceholderImage
-                              text={product.placeholderText}
-                              aspect="aspect-[4/3]"
-                              className="transition-transform duration-700 hover:scale-105"
+                          <div 
+                            className="mb-6 relative overflow-hidden rounded-2xl aspect-square bg-brand-cream-soft border border-brand-grey-light cursor-zoom-in group"
+                            onClick={() => setActiveImage(`/${product.id}.jpg`)}
+                          >
+                            <img
+                              src={`/${product.id}.jpg`}
+                              alt={product.name}
+                              className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                              loading="lazy"
                             />
+                            {/* Hover overlay with zoom icon */}
+                            <div className="absolute inset-0 bg-brand-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                              <span className="bg-brand-cream text-brand-dark p-2.5 rounded-full shadow-lg">
+                                <Maximize2 size={16} />
+                              </span>
+                            </div>
                           </div>
 
                           {/* Name and description */}
@@ -190,34 +216,40 @@ export default function Products() {
                             {product.name}
                           </h3>
                           <div className="text-left font-mono text-[11px] uppercase tracking-wider text-brand-green font-semibold mb-3">
-                            Spesifikasi: {product.thickness}
+                            {product.subtitle}
                           </div>
-                          <p className="text-xs text-brand-grey leading-relaxed text-left mb-6">
+                          <p className="text-xs text-brand-grey leading-relaxed text-left mb-6 font-sans">
                             {product.description}
                           </p>
 
-                          {/* Benefits */}
-                          <div className="border-t border-brand-grey-light pt-6 mb-8 text-left">
+                          {/* Specifications */}
+                          <div className="border-t border-brand-grey-light pt-6 mb-4 text-left">
                             <h4 className="text-xs uppercase tracking-wider font-semibold text-brand-dark/80 mb-3.5">
-                              Kelebihan Varian
+                              Specifications
                             </h4>
                             <ul className="flex flex-col gap-2.5">
-                              {product.benefits.map((benefit, idx) => (
+                              {product.specifications.map((spec, idx) => (
                                 <li key={idx} className="flex items-start gap-2 text-xs text-brand-grey leading-tight">
                                   <Check size={14} className="text-brand-green shrink-0 mt-0.5" />
-                                  <span>{benefit}</span>
+                                  <span>{spec}</span>
                                 </li>
                               ))}
                             </ul>
+                          </div>
+
+                          {/* Best For */}
+                          <div className="border-t border-brand-grey-light/50 pt-4 mb-6 text-left text-xs">
+                            <span className="font-bold text-brand-dark">Best For: </span>
+                            <span className="text-brand-grey">{product.bestFor}</span>
                           </div>
                         </div>
 
                         <Button
                           href="#contact"
-                          variant={product.featured ? 'primary' : 'secondary'}
+                          variant="secondary"
                           className="w-full text-center py-3"
                         >
-                          Pesan Sekarang
+                          Contact Us
                         </Button>
                       </div>
                     </div>
@@ -242,29 +274,30 @@ export default function Products() {
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {productList.map((product) => (
                 <div
                   key={product.id}
-                  className={`product-card-desktop rounded-3xl p-6 md:p-8 flex flex-col justify-between border transition-all duration-500 bg-brand-cream relative ${product.featured
-                      ? 'border-brand-green/45 shadow-xl shadow-brand-green/5 ring-1 ring-brand-green/30'
-                      : 'border-brand-grey-light hover:border-brand-grey shadow-sm hover:shadow-md'
-                    }`}
+                  className="product-card-desktop rounded-3xl p-6 flex flex-col justify-between border transition-all duration-500 bg-brand-cream relative border-brand-grey-light hover:border-brand-green/30 shadow-sm hover:shadow-md"
                 >
-                  {product.featured && (
-                    <span className="absolute -top-3.5 left-8 bg-brand-green text-brand-cream text-[10px] uppercase font-bold tracking-widest px-4 py-1.5 rounded-full flex items-center gap-1 shadow-sm">
-                      <ShieldCheck size={12} /> Terpopuler
-                    </span>
-                  )}
-
                   <div>
                     {/* Photo Container */}
-                    <div className="mb-6 relative overflow-hidden rounded-2xl">
-                      <PlaceholderImage
-                        text={product.placeholderText}
-                        aspect="aspect-[4/3]"
-                        className="transition-transform duration-700 hover:scale-105"
+                    <div 
+                      className="mb-6 relative overflow-hidden rounded-2xl aspect-square bg-brand-cream-soft border border-brand-grey-light cursor-zoom-in group"
+                      onClick={() => setActiveImage(`/${product.id}.jpg`)}
+                    >
+                      <img
+                        src={`/${product.id}.jpg`}
+                        alt={product.name}
+                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                        loading="lazy"
                       />
+                      {/* Hover overlay with zoom icon */}
+                      <div className="absolute inset-0 bg-brand-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span className="bg-brand-cream text-brand-dark p-2.5 rounded-full shadow-lg">
+                          <Maximize2 size={16} />
+                        </span>
+                      </div>
                     </div>
 
                     {/* Name and description */}
@@ -272,41 +305,86 @@ export default function Products() {
                       {product.name}
                     </h3>
                     <div className="text-left font-mono text-[11px] uppercase tracking-wider text-brand-green font-semibold mb-3">
-                      Spesifikasi: {product.thickness}
+                      {product.subtitle}
                     </div>
-                    <p className="text-xs text-brand-grey leading-relaxed text-left mb-6">
+                    <p className="text-xs text-brand-grey leading-relaxed text-left mb-6 font-sans">
                       {product.description}
                     </p>
 
-                    {/* Benefits */}
-                    <div className="border-t border-brand-grey-light pt-6 mb-8 text-left">
+                    {/* Specifications */}
+                    <div className="border-t border-brand-grey-light pt-6 mb-4 text-left">
                       <h4 className="text-xs uppercase tracking-wider font-semibold text-brand-dark/80 mb-3.5">
-                        Kelebihan Varian
+                        Specifications
                       </h4>
                       <ul className="flex flex-col gap-2.5">
-                        {product.benefits.map((benefit, idx) => (
+                        {product.specifications.map((spec, idx) => (
                           <li key={idx} className="flex items-start gap-2 text-xs text-brand-grey leading-tight">
                             <Check size={14} className="text-brand-green shrink-0 mt-0.5" />
-                            <span>{benefit}</span>
+                            <span>{spec}</span>
                           </li>
                         ))}
                       </ul>
+                    </div>
+
+                    {/* Best For */}
+                    <div className="border-t border-brand-grey-light/50 pt-4 mb-6 text-left text-xs">
+                      <span className="font-bold text-brand-dark">Best For: </span>
+                      <span className="text-brand-grey">{product.bestFor}</span>
                     </div>
                   </div>
 
                   <Button
                     href="#contact"
-                    variant={product.featured ? 'primary' : 'secondary'}
+                    variant="secondary"
                     className="w-full text-center py-3"
                   >
-                    Pesan Sekarang
+                    Contact Us
                   </Button>
                 </div>
               ))}
             </div>
           )}
         </div>
+
+        {/* Closing Copy Block */}
+        <div className="mt-20 text-center max-w-xl mx-auto border-t border-brand-grey-light pt-10">
+          <p className="text-xs md:text-sm text-brand-grey leading-relaxed mb-4">
+            A protective layer between your yoga mat and outdoor surfaces, helping keep your practice cleaner and more comfortable.
+          </p>
+          <h4 className="font-serif text-base md:text-lg font-bold text-brand-green mb-1">
+            Simple Grounding Essential
+          </h4>
+          <p className="text-[10px] md:text-xs font-bold text-brand-green font-mono uppercase tracking-wider">
+            Let's #GroundingWithParama
+          </p>
+        </div>
       </div>
+
+      {/* Image popup Modal overlay */}
+      {activeImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-brand-dark/85 backdrop-blur-sm p-4 cursor-pointer"
+          onClick={() => setActiveImage(null)}
+        >
+          <div 
+            className="relative max-w-4xl max-h-[90vh] overflow-hidden rounded-3xl bg-brand-cream border border-brand-grey-light shadow-2xl p-2"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={activeImage}
+              alt="Expanded view of Parama Grounding Sheet"
+              className="w-full h-auto max-h-[85vh] object-contain rounded-2xl"
+            />
+            <button
+              onClick={() => setActiveImage(null)}
+              className="absolute top-4 right-4 bg-brand-dark/70 text-brand-cream hover:bg-brand-green p-2 rounded-full transition-all duration-300 shadow-md active:scale-95 cursor-pointer z-10"
+              aria-label="Close image popup"
+            >
+              <X size={20} />
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
