@@ -130,14 +130,14 @@ export default function Navbar() {
       {/* Mobile Drawer Overlay */}
       {isOpen && (
         <div 
-          className="fixed inset-0 z-40 bg-brand-dark/40 backdrop-blur-sm md:hidden transition-opacity duration-300"
+          className="fixed inset-0 z-50 bg-brand-dark/40 backdrop-blur-sm md:hidden transition-opacity duration-300"
           onClick={() => setIsOpen(false)}
         />
       )}
 
       {/* Mobile Navigation Drawer (Right to Left Slide) */}
       <div 
-        className={`fixed top-0 right-0 bottom-0 w-[280px] bg-brand-cream z-50 md:hidden flex flex-col p-6 shadow-2xl border-l border-brand-grey-light/30 transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 bottom-0 w-[280px] bg-brand-cream z-60 md:hidden flex flex-col p-6 shadow-2xl border-l border-brand-grey-light/30 transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

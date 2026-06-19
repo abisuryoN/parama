@@ -20,7 +20,7 @@ export default function FloatingCTA() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-24 md:bottom-6 right-6 z-50 flex flex-col items-end gap-3 font-sans">
+    <div className="fixed bottom-24 md:bottom-6 right-6 z-40 flex flex-col items-end gap-3 font-sans">
       {/* Expanded Menu Options */}
       {isOpen && (
         <div 
