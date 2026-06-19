@@ -50,9 +50,11 @@ export default function Navbar() {
       <div className="max-w-[90%] w-full mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="nav-item flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-brand-green flex items-center justify-center text-brand-cream font-bold text-lg select-none transition-transform duration-300 group-hover:rotate-12">
-            P
-          </div>
+          <img
+            src="/logo.png"
+            alt="PARAMA Logo"
+            className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          />
           <span className="font-serif text-xl font-bold tracking-tight text-brand-dark group-hover:text-brand-green transition-colors duration-300">
             PARAMA
           </span>

@@ -11,9 +11,11 @@ export default function Footer() {
         {/* Branding Column */}
         <div className="md:col-span-5 text-left flex flex-col items-start">
           <a href="#" className="flex items-center gap-2 group mb-5">
-            <div className="w-8 h-8 rounded-lg bg-brand-green flex items-center justify-center text-brand-cream font-bold text-lg select-none transition-transform duration-300 group-hover:rotate-12">
-              P
-            </div>
+            <img
+              src="/logo.png"
+              alt="PARAMA Logo"
+              className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
             <span className="font-serif text-xl font-bold tracking-tight text-brand-cream group-hover:text-brand-green transition-colors duration-300">
               PARAMA
             </span>
