@@ -33,9 +33,9 @@ export default function Hero() {
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-brand-green/5 rounded-full filter blur-[100px] pointer-events-none"></div>
       <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-brand-cream-soft rounded-full filter blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-[90%] w-full mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        {/* Copy Column */}
-        <div className="lg:col-span-7 flex flex-col items-start text-left z-10">
+      <div className="max-w-[90%] w-full mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-x-12 lg:gap-x-16 gap-y-6 lg:gap-y-8 items-center">
+        {/* Hero Header Block */}
+        <div className="col-span-1 lg:col-span-7 flex flex-col items-start text-left z-10 order-1">
           <div className="hero-text inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-cream-soft border border-brand-grey-light mb-6">
             <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
             <span className="text-[10px] md:text-xs font-semibold uppercase tracking-wider text-brand-green">
@@ -43,31 +43,14 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="hero-text font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-brand-dark leading-[1.1] mb-6">
+          <h1 className="hero-text font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-brand-dark leading-[1.1]">
             Grounding Sheet for <br />
             <span className="text-brand-green italic font-medium">Better Outdoor Practice</span>
           </h1>
-
-          <p className="hero-text text-sm md:text-base text-brand-grey max-w-xl mb-3">
-            Stay comfortable, clean, and connected with nature wherever your yoga journey takes you.
-          </p>
-
-          <p className="hero-text text-xs md:text-sm text-brand-grey max-w-xl mb-8 leading-relaxed">
-            We believe that every outdoor yoga practice deserves a clean, comfortable, and worry-free foundation. Born from the simple challenges of practicing yoga outdoors, Parama was created to help protect your yoga mat from wet grass, damp surfaces, dirt, and uneven ground. Lightweight, foldable, waterproof, and easy to carry, Parama helps create a cleaner and more comfortable outdoor yoga experience.
-          </p>
-
-          <div className="hero-text flex flex-wrap gap-4 items-center">
-            <Button href="#contact" variant="primary" className="flex items-center gap-2">
-              Contact Us <ArrowRight size={16} />
-            </Button>
-            <Button href="#products" variant="secondary">
-              Our Product
-            </Button>
-          </div>
         </div>
 
         {/* Mockup Column */}
-        <div className="lg:col-span-5 w-full flex items-center justify-center relative">
+        <div className="col-span-1 lg:col-span-5 lg:row-span-2 w-full flex items-center justify-center relative order-2">
           <div className="hero-visual relative w-full max-w-md lg:max-w-none">
             {/* Elegant wellness shadow card wrapper */}
             <div className="absolute -inset-4 bg-brand-green/5 rounded-3xl filter blur-xl transform rotate-2 pointer-events-none"></div>
@@ -91,6 +74,26 @@ export default function Hero() {
                 <p className="text-xs font-bold font-mono">190 cm × 75 cm</p>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Description & CTA Block */}
+        <div className="col-span-1 lg:col-span-7 flex flex-col items-start text-left z-10 order-3">
+          <p className="hero-text text-sm md:text-base text-brand-grey max-w-xl mb-3">
+            Stay comfortable, clean, and connected with nature wherever your yoga journey takes you.
+          </p>
+
+          <p className="hero-text text-xs md:text-sm text-brand-grey max-w-xl mb-8 leading-relaxed">
+            We believe that every outdoor yoga practice deserves a clean, comfortable, and worry-free foundation. Born from the simple challenges of practicing yoga outdoors, Parama was created to help protect your yoga mat from wet grass, damp surfaces, dirt, and uneven ground. Lightweight, foldable, waterproof, and easy to carry, Parama helps create a cleaner and more comfortable outdoor yoga experience.
+          </p>
+
+          <div className="hero-text flex flex-wrap gap-4 items-center">
+            <Button href="#contact" variant="primary" className="flex items-center gap-2">
+              Contact Us <ArrowRight size={16} />
+            </Button>
+            <Button href="#products" variant="secondary">
+              Our Product
+            </Button>
           </div>
         </div>
       </div>
