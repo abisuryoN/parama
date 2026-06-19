@@ -3,24 +3,9 @@ import { MessageCircle, Instagram, Send, X, ArrowUpRight } from 'lucide-react';
 import gsap from 'gsap';
 
 export default function FloatingCTA() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
-
-  // Monitor scroll height to reveal the floating button
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 400) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-        setIsOpen(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Animating menu expansion
   useEffect(() => {
@@ -35,7 +20,7 @@ export default function FloatingCTA() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 font-sans">
+    <div className="fixed bottom-24 md:bottom-6 right-6 z-50 flex flex-col items-end gap-3 font-sans">
       {/* Expanded Menu Options */}
       {isOpen && (
         <div 
