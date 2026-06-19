@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PlaceholderImage from '../components/PlaceholderImage';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 export default function Gallery() {
   const containerRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [activeImage, setActiveImage] = useState(null);
 
   // Mobile slider state
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -110,9 +111,9 @@ export default function Gallery() {
     <section
       id="gallery"
       ref={containerRef}
-      className="py-20 md:py-28 bg-brand-cream border-t border-brand-grey-light overflow-hidden"
+      className="py-20 md:py-28 bg-brand-cream border-t border-brand-grey-light overflow-hidden font-sans"
     >
-      <div className="max-w-[90%] w-full mx-auto px-6 md:px-12">
+      <div className="max-w-full md:max-w-[90%] w-full mx-auto px-4 md:px-12">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-brand-green">Gallery</span>
@@ -128,7 +129,7 @@ export default function Gallery() {
         {/* Gallery Wrapper - Mobile Horizontal Scroll, Desktop Masonry Grid */}
         <div className="gallery-wrapper relative">
           {isMobile ? (
-            <div className="relative px-8">
+            <div className="relative px-6">
               {/* Slider Viewport */}
               <div className="overflow-hidden w-full">
                 <div
@@ -148,13 +149,22 @@ export default function Gallery() {
                         className="rounded-3xl overflow-hidden bg-brand-cream-soft border border-brand-grey-light hover:border-brand-green/30 group relative flex flex-col justify-between"
                       >
                         {/* Actual Image */}
-                        <div className="w-full relative overflow-hidden aspect-video bg-brand-cream-soft">
+                        <div 
+                          className="w-full relative overflow-hidden aspect-[3/2] bg-brand-cream-soft cursor-zoom-in group/img"
+                          onClick={() => setActiveImage(item.imageSrc)}
+                        >
                           <img
                             src={item.imageSrc}
                             alt={item.title}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.02]"
                             loading="lazy"
                           />
+                          {/* Zoom Icon overlay */}
+                          <div className="absolute inset-0 bg-brand-dark/20 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                            <span className="bg-brand-cream text-brand-dark p-2.5 rounded-full shadow-lg">
+                              <Maximize2 size={16} />
+                            </span>
+                          </div>
                         </div>
 
                         {/* Mobile Info Tag */}
@@ -193,7 +203,8 @@ export default function Gallery() {
               {galleryItems.map((item) => (
                 <div
                   key={item.id}
-                  className={`gallery-item-desktop rounded-3xl overflow-hidden bg-brand-cream-soft border border-brand-grey-light hover:border-brand-green/30 group relative flex flex-col justify-between ${item.gridClass}`}
+                  className={`gallery-item-desktop rounded-3xl overflow-hidden bg-brand-cream-soft border border-brand-grey-light hover:border-brand-green/30 group relative flex flex-col justify-between cursor-zoom-in ${item.gridClass}`}
+                  onClick={() => setActiveImage(item.imageSrc)}
                 >
                   {/* Actual Image */}
                   <div className="w-full h-full relative overflow-hidden bg-brand-cream-soft">
@@ -205,7 +216,12 @@ export default function Gallery() {
                     />
 
                     {/* Premium overlay visible on hover */}
-                    <div className="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <div className="absolute inset-0 bg-brand-dark/45 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-between justify-between flex-col p-6 pointer-events-none">
+                      <div className="flex justify-end w-full">
+                        <span className="bg-brand-cream/90 text-brand-dark p-2.5 rounded-full shadow-lg">
+                          <Maximize2 size={16} />
+                        </span>
+                      </div>
                       <div className="text-left text-brand-cream translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
                         <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-green block mb-1">
                           {item.category}
@@ -222,6 +238,32 @@ export default function Gallery() {
           )}
         </div>
       </div>
+
+      {/* Image popup Modal overlay */}
+      {activeImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-brand-dark/85 backdrop-blur-sm p-4 cursor-pointer"
+          onClick={() => setActiveImage(null)}
+        >
+          <div 
+            className="relative max-w-4xl max-h-[90vh] overflow-hidden rounded-3xl bg-brand-cream border border-brand-grey-light shadow-2xl p-2"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={activeImage}
+              alt="Expanded view of Parama Gallery"
+              className="w-full h-auto max-h-[85vh] object-contain rounded-2xl"
+            />
+            <button
+              onClick={() => setActiveImage(null)}
+              className="absolute top-4 right-4 bg-brand-dark/70 text-brand-cream hover:bg-brand-green p-2 rounded-full transition-all duration-300 shadow-md active:scale-95 cursor-pointer z-10"
+              aria-label="Close image popup"
+            >
+              <X size={20} />
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

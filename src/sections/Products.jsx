@@ -156,7 +156,7 @@ export default function Products() {
       ref={containerRef}
       className="py-20 md:py-28 bg-brand-cream-soft border-t border-brand-grey-light overflow-hidden"
     >
-      <div className="max-w-[90%] w-full mx-auto px-6 md:px-12">
+      <div className="max-w-full md:max-w-[90%] w-full mx-auto px-4 md:px-12">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-brand-green">Our Product</span>
@@ -172,7 +172,7 @@ export default function Products() {
         {/* Product Cards Container - Mobile Horizontal Slider, Desktop Grid */}
         <div className="product-container relative">
           {isMobile ? (
-            <div className="relative px-8">
+            <div className="relative px-6">
               {/* Slider Viewport */}
               <div className="overflow-hidden w-full">
                 <div
@@ -189,7 +189,7 @@ export default function Products() {
                       className="w-full shrink-0 px-2"
                     >
                       <div
-                        className="product-card rounded-3xl p-6 flex flex-col justify-between border transition-all duration-500 bg-brand-cream relative border-brand-grey-light hover:border-brand-green/30 shadow-sm hover:shadow-md"
+                        className="product-card rounded-3xl p-4 sm:p-6 flex flex-col justify-between border transition-all duration-500 bg-brand-cream relative border-brand-grey-light hover:border-brand-green/30 shadow-sm hover:shadow-md"
                       >
                         <div>
                           {/* Photo Container */}
@@ -204,7 +204,7 @@ export default function Products() {
                               loading="lazy"
                             />
                             {/* Hover overlay with zoom icon */}
-                            <div className="absolute inset-0 bg-brand-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div className="absolute inset-0 bg-brand-dark/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
                               <span className="bg-brand-cream text-brand-dark p-2.5 rounded-full shadow-lg">
                                 <Maximize2 size={16} />
                               </span>

@@ -9,8 +9,6 @@ export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [zoomImage, setZoomImage] = useState(null);
   const cardRef = useRef(null);
-  const autoPlayRef = useRef(null);
-
   const reviews = [
     { image: '/testimoni1.jpg', alt: 'Testimonial 1' },
     { image: '/testimoni2.jpg', alt: 'Testimonial 2' },
@@ -23,19 +21,6 @@ export default function Testimonials() {
     { image: '/testimoni9.jpg', alt: 'Testimonial 9' },
     { image: '/testimoni10.jpg', alt: 'Testimonial 10' }
   ];
-
-  // Auto-play interval
-  useEffect(() => {
-    autoPlayRef.current = nextSlide;
-  });
-
-  useEffect(() => {
-    const play = () => {
-      autoPlayRef.current();
-    };
-    const interval = setInterval(play, 6000); // Change slide every 6s
-    return () => clearInterval(interval);
-  }, []);
 
   const nextSlide = () => {
     setActiveIndex((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
