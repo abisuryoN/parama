@@ -56,23 +56,12 @@ export default function Hero() {
             <div className="absolute -inset-4 bg-brand-green/5 rounded-3xl filter blur-xl transform rotate-2 pointer-events-none"></div>
 
             {/* Main Visual */}
-            <div className="relative overflow-hidden rounded-2xl aspect-[4/3] shadow-2xl border border-brand-grey-light bg-brand-cream-soft">
+            <div className="relative overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl border border-brand-grey-light bg-brand-cream-soft">
               <img
-                src="/black.jpg"
+                src="/hero1.jpg"
                 alt="Parama Premium Grounding Sheet"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
-            </div>
-
-            {/* Accent tag detailing tech spec */}
-            <div className="absolute -bottom-4 -right-4 bg-brand-dark text-brand-cream p-4 rounded-2xl shadow-xl border border-brand-grey/30 hidden sm:flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-brand-green/20 flex items-center justify-center text-brand-green">
-                <span className="font-bold text-sm">190</span>
-              </div>
-              <div className="text-left">
-                <p className="text-[10px] text-brand-cream/50 uppercase tracking-widest font-semibold">Perfect Fit</p>
-                <p className="text-xs font-bold font-mono">190 cm × 75 cm</p>
-              </div>
             </div>
           </div>
         </div>
