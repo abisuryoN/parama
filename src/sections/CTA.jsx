@@ -47,13 +47,16 @@ export default function CTA() {
               Connect With Us
             </span>
 
-            <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
-              Ready to Elevate Your Outdoor Practice? <br className="hidden md:inline" />
-              Contact Us Today.
+            <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight mb-4 leading-tight">
+              Kontak
             </h2>
 
-            <p className="text-xs md:text-base text-brand-cream/80 mb-10 max-w-lg leading-relaxed">
-              We are here to help you find the perfect grounding sheet for your wellness routine. Reach out via Instagram or WhatsApp to order or consult with our team.
+            <p className="text-base md:text-lg font-medium text-brand-cream/90 mb-4 max-w-xl">
+              Ready to Elevate Your Outdoor Practice? Contact Us Today.
+            </p>
+
+            <p className="text-xs md:text-sm text-brand-cream/80 mb-10 max-w-lg leading-relaxed">
+              Kami di sini untuk membantu Anda menemukan terpal alas matras premium yang tepat untuk rutinitas kesehatan Anda. Hubungi kami melalui Instagram atau WhatsApp untuk pemesanan atau konsultasi dengan tim kami.
             </p>
 
             {/* CTA Buttons Grid */}

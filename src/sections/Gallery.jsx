@@ -58,64 +58,64 @@ export default function Gallery() {
   const galleryItems = [
     {
       id: 1,
-      title: 'Outdoor Yoga Flow',
-      category: 'Outdoor Yoga',
+      title: 'Latihan Yoga Outdoor dengan Terpal Alas Matras Parama',
+      category: 'Alas Matras Outdoor',
       imageSrc: '/gakeri1.jpg',
       gridClass: 'md:col-span-2 md:row-span-2'
     },
     {
       id: 2,
-      title: 'Nature Connection',
-      category: 'Nature Connection',
+      title: 'Sesi Relaksasi Yoga dengan Alas Matras Waterproof Parama',
+      category: 'Alas Matras Waterproof',
       imageSrc: '/galeri2.jpg',
       gridClass: 'md:col-span-1 md:row-span-1'
     },
     {
       id: 3,
-      title: 'Tranquil Retreat',
-      category: 'Yoga Retreat',
+      title: 'Retreat Yoga di Alam Terbuka Menggunakan Terpal Premium Parama',
+      category: 'Terpal Premium',
       imageSrc: '/galeri3.jpg',
       gridClass: 'md:col-span-1 md:row-span-1'
     },
     {
       id: 4,
-      title: 'Mindful Breathing',
-      category: 'Meditation',
+      title: 'Latihan Pernapasan Nyaman dengan Terpal Pelindung Matras Parama',
+      category: 'Terpal Pelindung Matras',
       imageSrc: '/galeri4.jpg',
       gridClass: 'md:col-span-1 md:row-span-1'
     },
     {
       id: 5,
-      title: 'Morning Stretch',
-      category: 'Vinyasa Flow',
+      title: 'Sesi Peregangan Pagi dengan Alas Matras Yoga Outdoor Parama',
+      category: 'Alas Matras Yoga Outdoor',
       imageSrc: '/galeri5.jpg',
       gridClass: 'md:col-span-1 md:row-span-1'
     },
     {
       id: 6,
-      title: 'Serene Sanctuary',
-      category: 'Wellness',
+      title: 'Area Meditasi Bersih Menggunakan Terpal Alas Matras Parama',
+      category: 'Terpal Alas Matras',
       imageSrc: '/galeri6.jpg',
       gridClass: 'md:col-span-1 md:row-span-2'
     },
     {
       id: 7,
-      title: 'Forest Meditation',
-      category: 'Nature Connection',
+      title: 'Piknik dan Yoga di Hutan Menggunakan Alas Matras Outdoor Parama',
+      category: 'Alas Matras Outdoor',
       imageSrc: '/galeri7.jpg',
       gridClass: 'md:col-span-2 md:row-span-1'
     },
     {
       id: 8,
-      title: 'Sunset Asana',
-      category: 'Yoga Flow',
+      title: 'Latihan Yoga Sunset Menenangkan dengan Terpal Premium Parama',
+      category: 'Terpal Premium',
       imageSrc: '/galeri8.jpg',
       gridClass: 'md:col-span-2 md:row-span-1'
     },
     {
       id: 9,
-      title: 'Inner Peace',
-      category: 'Meditation',
+      title: 'Meditasi Ketenangan Jiwa dengan Terpal Pelindung Matras Parama',
+      category: 'Terpal Pelindung Matras',
       imageSrc: '/galeri9.jpg',
       gridClass: 'md:col-span-1 md:row-span-1'
     }

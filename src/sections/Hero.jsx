@@ -43,9 +43,9 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="hero-text font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-brand-dark leading-[1.1]">
-            Grounding Sheet for <br />
-            <span className="text-brand-green italic font-medium">Better Outdoor Practice</span>
+          <h1 className="hero-text font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-brand-dark leading-[1.15]">
+            Terpal Alas Matras <br />
+            <span className="text-brand-green italic font-medium">Premium dari Parama Terpal</span>
           </h1>
         </div>
 
@@ -59,8 +59,9 @@ export default function Hero() {
             <div className="relative overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl border border-brand-grey-light bg-brand-cream-soft">
               <img
                 src="/hero1.jpg"
-                alt="Parama Premium Grounding Sheet"
+                alt="Terpal alas matras premium Parama Terpal untuk alas matras yoga outdoor"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                loading="eager"
               />
             </div>
           </div>
@@ -68,12 +69,12 @@ export default function Hero() {
 
         {/* Description & CTA Block */}
         <div className="col-span-1 lg:col-span-7 flex flex-col items-start text-left z-10 order-3">
-          <p className="hero-text text-sm md:text-base text-brand-grey max-w-xl mb-3">
-            Stay comfortable, clean, and connected with nature wherever your yoga journey takes you.
+          <p className="hero-text text-sm md:text-base text-brand-grey max-w-xl mb-4 font-serif italic">
+            Parama Terpal menghadirkan terpal alas matras berkualitas premium yang dirancang untuk memberikan perlindungan maksimal, kenyamanan, dan daya tahan tinggi. Cocok digunakan untuk kebutuhan rumah, aktivitas outdoor, camping, yoga, hingga berbagai kegiatan lainnya.
           </p>
 
           <p className="hero-text text-xs md:text-sm text-brand-grey max-w-xl mb-8 leading-relaxed">
-            We believe that every outdoor yoga practice deserves a clean, comfortable, and worry-free foundation. Born from the simple challenges of practicing yoga outdoors, Parama was created to help protect your yoga mat from wet grass, damp surfaces, dirt, and uneven ground. Lightweight, foldable, waterproof, and easy to carry, Parama helps create a cleaner and more comfortable outdoor yoga experience.
+            Parama Terpal lahir dari kebutuhan akan alas matras yang lebih bersih, nyaman, dan tahan lama. Kami menyediakan terpal premium yang membantu melindungi matras dari debu, kotoran, permukaan lembap, serta kondisi lingkungan yang kurang ideal.
           </p>
 
           <div className="hero-text flex flex-wrap gap-4 items-center">

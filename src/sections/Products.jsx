@@ -51,65 +51,69 @@ export default function Products() {
     {
       id: 'black',
       name: 'PARAMA BLACK',
-      description: 'Our premium grounding sheet, designed for yogis who seek extra durability and protection during outdoor practice.',
-      subtitle: 'Size: 190 cm × 75 cm | Extra Thick',
+      alt: 'Terpal alas matras premium Parama Black untuk yoga outdoor',
+      description: 'Alas pelindung matras yoga outdoor premium kami, dirancang untuk memberikan daya tahan ekstra dan perlindungan maksimal di area terbuka.',
+      subtitle: 'Ukuran: 190 cm × 75 cm | Tebal Ekstra',
       specifications: [
-        'Size: 190 cm × 75 cm',
-        'Thickness: Extra Thick',
-        'Water-resistant',
-        'Lightweight and foldable',
-        'Easy to clean',
-        'Suitable for grass, soil, sand, and outdoor surfaces'
+        'Ukuran: 190 cm × 75 cm',
+        'Ketebalan: Tebal Ekstra',
+        'Tahan air (Waterproof)',
+        'Ringan dan mudah dilipat',
+        'Sangat mudah dibersihkan',
+        'Cocok untuk permukaan rumput, tanah, pasir, dan outdoor lainnya'
       ],
-      bestFor: 'Outdoor yoga, retreats, wellness events, and regular outdoor practice.',
+      bestFor: 'Yoga outdoor, camping, piknik, dan kegiatan luar ruangan.',
       placeholderText: 'Parama Black Grounding Sheet'
     },
     {
       id: 'silver',
       name: 'PARAMA SILVER',
-      description: 'A durable grounding sheet with enhanced thickness, offering reliable protection between your yoga mat and the ground.',
-      subtitle: 'Size: 190 cm × 75 cm | Extra Thick',
+      alt: 'Alas matras outdoor waterproof Parama Silver tebal',
+      description: 'Terpal pelindung matras premium dengan ketebalan ekstra yang andal melindungi matras yoga Anda dari permukaan kasar atau basah.',
+      subtitle: 'Ukuran: 190 cm × 75 cm | Tebal Ekstra',
       specifications: [
-        'Size: 190 cm × 75 cm',
-        'Thickness: Extra Thick',
-        'Water-resistant',
-        'Lightweight and easy to carry',
-        'Easy to wipe clean',
-        'Designed for outdoor use'
+        'Ukuran: 190 cm × 75 cm',
+        'Ketebalan: Tebal Ekstra',
+        'Tahan air (Waterproof)',
+        'Mudah dilipat dan dibawa',
+        'Praktis untuk dibersihkan',
+        'Dirancang khusus untuk aktivitas outdoor'
       ],
-      bestFor: 'Yoga in parks, gardens, beaches, and outdoor community events.',
+      bestFor: 'Latihan yoga di taman, pantai, area camping, dan kegiatan rekreasi.',
       placeholderText: 'Parama Silver Grounding Sheet'
     },
     {
       id: 'navy',
       name: 'PARAMA NAVY',
-      description: 'A lightweight grounding sheet that provides practical protection while remaining easy to pack and carry.',
-      subtitle: 'Size: 190 cm × 75 cm | Standard',
+      alt: 'Terpal premium pelindung matras Parama Navy standard',
+      description: 'Terpal premium pelindung matras standar yang ringan, praktis dikemas, dan sangat mudah untuk dibawa ke mana saja.',
+      subtitle: 'Ukuran: 190 cm × 75 cm | Standar',
       specifications: [
-        'Size: 190 cm × 75 cm',
-        'Thickness: Standard',
-        'Water-resistant',
-        'Foldable and compact',
-        'Easy to clean',
-        'Suitable for outdoor yoga and wellness activities'
+        'Ukuran: 190 cm × 75 cm',
+        'Ketebalan: Standar',
+        'Tahan air (Waterproof)',
+        'Dapat dilipat kecil',
+        'Mudah dilap bersih',
+        'Sempurna untuk latihan sehari-hari di area terbuka'
       ],
-      bestFor: 'Casual outdoor practice and everyday use.',
+      bestFor: 'Latihan santai outdoor, piknik keluarga, dan meditasi alam.',
       placeholderText: 'Parama Navy Grounding Sheet'
     },
     {
       id: 'blue',
       name: 'PARAMA BLUE',
-      description: 'A simple and functional grounding sheet designed to help keep your yoga mat cleaner during outdoor sessions.',
-      subtitle: 'Size: 190 cm × 75 cm | Standard',
+      alt: 'Alas matras yoga outdoor waterproof Parama Blue',
+      description: 'Alas matras yoga outdoor waterproof yang fungsional untuk menjaga matras kesayangan Anda tetap bersih dari debu atau tanah basah.',
+      subtitle: 'Ukuran: 190 cm × 75 cm | Standar',
       specifications: [
-        'Size: 190 cm × 75 cm',
-        'Thickness: Standard',
-        'Water-resistant',
-        'Lightweight and portable',
-        'Easy to fold and store',
-        'Ideal for outdoor yoga and meditation'
+        'Ukuran: 190 cm × 75 cm',
+        'Ketebalan: Standar',
+        'Tahan air (Waterproof)',
+        'Sangat ringan dan portabel',
+        'Bahan awet berkualitas',
+        'Ideal untuk yoga outdoor, piknik, dan meditasi'
       ],
-      bestFor: 'Outdoor yoga, picnics, meditation, and community gatherings.',
+      bestFor: 'Yoga di taman, piknik, meditasi, dan kumpul komunitas.',
       placeholderText: 'Parama Blue Grounding Sheet'
     }
   ];
@@ -159,9 +163,9 @@ export default function Products() {
       <div className="max-w-full md:max-w-[90%] w-full mx-auto px-4 md:px-12">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-brand-green">Our Product</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-brand-green">Alas Matras Premium</span>
           <h2 className="font-serif text-3xl md:text-4xl font-bold tracking-tight text-brand-dark mt-2">
-            Our Product
+            Produk Unggulan
           </h2>
           <p className="text-xs md:text-sm text-brand-grey mt-3 max-w-lg mx-auto">
             Choose the perfect grounding sheet to complement your outdoor yoga flow and wellness routine.
@@ -199,7 +203,7 @@ export default function Products() {
                           >
                             <img
                               src={`/${product.id}.jpg`}
-                              alt={product.name}
+                              alt={product.alt}
                               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                               loading="lazy"
                             />
@@ -288,7 +292,7 @@ export default function Products() {
                     >
                       <img
                         src={`/${product.id}.jpg`}
-                        alt={product.name}
+                        alt={product.alt}
                         className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                         loading="lazy"
                       />

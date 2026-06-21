@@ -10,16 +10,16 @@ export default function Testimonials() {
   const [zoomImage, setZoomImage] = useState(null);
   const cardRef = useRef(null);
   const reviews = [
-    { image: '/testimoni1.jpg', alt: 'Testimonial 1' },
-    { image: '/testimoni2.jpg', alt: 'Testimonial 2' },
-    { image: '/testimoni3.jpg', alt: 'Testimonial 3' },
-    { image: '/testimoni4.jpg', alt: 'Testimonial 4' },
-    { image: '/testimoni5.jpg', alt: 'Testimonial 5' },
-    { image: '/testimoni6.jpg', alt: 'Testimonial 6' },
-    { image: '/testimoni7.jpg', alt: 'Testimonial 7' },
-    { image: '/testimoni8.jpg', alt: 'Testimonial 8' },
-    { image: '/testimoni9.jpg', alt: 'Testimonial 9' },
-    { image: '/testimoni10.jpg', alt: 'Testimonial 10' }
+    { image: '/testimoni1.jpg', alt: 'Review konsumen Parama Terpal - terpal alas matras premium' },
+    { image: '/testimoni2.jpg', alt: 'Testimonial alas matras outdoor waterproof Parama Terpal' },
+    { image: '/testimoni3.jpg', alt: 'Review matras yoga outdoor dengan terpal pelindung matras Parama' },
+    { image: '/testimoni4.jpg', alt: 'Testimonial terpal premium alas matras yoga Parama' },
+    { image: '/testimoni5.jpg', alt: 'Pengalaman menggunakan alas matras yoga outdoor waterproof Parama' },
+    { image: '/testimoni6.jpg', alt: 'Review terpal pelindung matras premium Parama untuk camping' },
+    { image: '/testimoni7.jpg', alt: 'Testimonial terpal alas matras waterproof Parama untuk piknik' },
+    { image: '/testimoni8.jpg', alt: 'Review alas matras yoga outdoor Parama Terpal warna hitam' },
+    { image: '/testimoni9.jpg', alt: 'Testimonial terpal premium alas matras outdoor Parama Terpal' },
+    { image: '/testimoni10.jpg', alt: 'Review terpal pelindung matras yoga outdoor Parama' }
   ];
 
   const nextSlide = () => {
@@ -48,7 +48,7 @@ export default function Testimonials() {
         <div className="text-center mb-12">
           <span className="text-xs font-bold uppercase tracking-widest text-brand-green">Testimonial</span>
           <h2 className="font-serif text-3xl md:text-4xl font-bold tracking-tight text-brand-dark mt-2">
-            What Our Community Says
+            Testimoni Pelanggan
           </h2>
           <div className="w-16 h-1 bg-brand-green mx-auto mt-4 rounded-full"></div>
         </div>

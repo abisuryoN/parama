@@ -23,7 +23,7 @@ export default function Navbar() {
       }
 
       // Scroll Spy check
-      const sections = ['about', 'products', 'gallery', 'why-us', 'testimonials', 'contact'];
+      const sections = ['about', 'products', 'gallery', 'why-us', 'testimonials', 'faq', 'contact'];
       let currentSection = 'home';
 
       if (window.scrollY < 120) {
@@ -55,11 +55,12 @@ export default function Navbar() {
   }, { scope: containerRef });
 
   const navLinks = [
-    { label: 'About Us', href: '#about' },
-    { label: 'Our Product', href: '#products' },
-    { label: 'Gallery', href: '#gallery' },
-    { label: 'Advantages', href: '#why-us' },
-    { label: 'Testimonial', href: '#testimonials' },
+    { label: 'Tentang Kami', href: '#about' },
+    { label: 'Produk', href: '#products' },
+    { label: 'Galeri', href: '#gallery' },
+    { label: 'Keunggulan', href: '#why-us' },
+    { label: 'Testimoni', href: '#testimonials' },
+    { label: 'FAQ', href: '#faq' },
   ];
 
   return (
@@ -76,7 +77,7 @@ export default function Navbar() {
           <a href="#" className="nav-item flex items-center gap-2 group">
             <img
               src="/logo.png"
-              alt="PARAMA Logo"
+              alt="Logo Parama Terpal - Produsen Terpal Alas Matras Premium"
               className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <span className="font-serif text-xl font-bold tracking-tight text-brand-dark group-hover:text-brand-green transition-colors duration-300">
@@ -111,7 +112,7 @@ export default function Navbar() {
                   : 'bg-brand-dark text-brand-cream hover:bg-brand-green'
               }`}
             >
-              Contact Us
+              Kontak
               <ArrowUpRight size={13} />
             </a>
           </nav>
@@ -181,7 +182,7 @@ export default function Navbar() {
                 : 'bg-brand-dark text-brand-cream hover:bg-brand-green'
             }`}
           >
-            Contact Us
+            Kontak
             <ArrowUpRight size={14} />
           </a>
         </nav>
@@ -210,7 +211,7 @@ export default function Navbar() {
             }`}
           >
             <Info size={18} />
-            <span>About</span>
+            <span>Tentang Kami</span>
           </a>
           <a 
             href="#products" 
@@ -221,7 +222,7 @@ export default function Navbar() {
             }`}
           >
             <ShoppingBag size={18} />
-            <span>Product</span>
+            <span>Produk</span>
           </a>
           <a 
             href="#gallery" 
@@ -232,7 +233,7 @@ export default function Navbar() {
             }`}
           >
             <Image size={18} />
-            <span>Gallery</span>
+            <span>Galeri</span>
           </a>
           <a 
             href="#why-us" 
@@ -243,7 +244,7 @@ export default function Navbar() {
             }`}
           >
             <Sparkles size={18} />
-            <span>Advantages</span>
+            <span>Keunggulan</span>
           </a>
           <a 
             href="#testimonials" 
@@ -254,7 +255,18 @@ export default function Navbar() {
             }`}
           >
             <MessageSquare size={18} />
-            <span>Testimonial</span>
+            <span>Testimoni</span>
+          </a>
+          <a 
+            href="#faq" 
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${
+              activeSection === 'faq'
+                ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
+                : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
+            }`}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-help-circle"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+            <span>FAQ</span>
           </a>
           <a 
             href="#contact" 
@@ -265,7 +277,7 @@ export default function Navbar() {
             }`}
           >
             <Phone size={18} />
-            <span>Contact</span>
+            <span>Kontak</span>
           </a>
           <a 
             href="https://wa.me/6281294924003" 

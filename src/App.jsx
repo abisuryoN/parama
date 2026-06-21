@@ -6,6 +6,7 @@ import Products from './sections/Products';
 import WhyChooseUs from './sections/WhyChooseUs';
 import Gallery from './sections/Gallery';
 import Testimonials from './sections/Testimonials';
+import FAQ from './sections/FAQ';
 import CTA from './sections/CTA';
 import Footer from './sections/Footer';
 import FloatingCTA from './components/FloatingCTA';
@@ -24,6 +25,7 @@ export default function App() {
         <Gallery />
         <WhyChooseUs />
         <Testimonials />
+        <FAQ />
         <CTA />
       </main>
 
