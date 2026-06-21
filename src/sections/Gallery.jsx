@@ -15,6 +15,14 @@ export default function Gallery() {
   // Mobile slider state
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const transitionTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -68,6 +76,48 @@ export default function Gallery() {
       category: 'Yoga Retreat',
       imageSrc: '/galeri3.jpg',
       gridClass: 'md:col-span-1 md:row-span-1'
+    },
+    {
+      id: 4,
+      title: 'Mindful Breathing',
+      category: 'Meditation',
+      imageSrc: '/galeri4.jpg',
+      gridClass: 'md:col-span-1 md:row-span-1'
+    },
+    {
+      id: 5,
+      title: 'Morning Stretch',
+      category: 'Vinyasa Flow',
+      imageSrc: '/galeri5.jpg',
+      gridClass: 'md:col-span-1 md:row-span-1'
+    },
+    {
+      id: 6,
+      title: 'Serene Sanctuary',
+      category: 'Wellness',
+      imageSrc: '/galeri6.jpg',
+      gridClass: 'md:col-span-1 md:row-span-2'
+    },
+    {
+      id: 7,
+      title: 'Forest Meditation',
+      category: 'Nature Connection',
+      imageSrc: '/galeri7.jpg',
+      gridClass: 'md:col-span-2 md:row-span-1'
+    },
+    {
+      id: 8,
+      title: 'Sunset Asana',
+      category: 'Yoga Flow',
+      imageSrc: '/galeri8.jpg',
+      gridClass: 'md:col-span-2 md:row-span-1'
+    },
+    {
+      id: 9,
+      title: 'Inner Peace',
+      category: 'Meditation',
+      imageSrc: '/galeri9.jpg',
+      gridClass: 'md:col-span-1 md:row-span-1'
     }
   ];
 
@@ -79,13 +129,25 @@ export default function Gallery() {
   ];
 
   const handleNext = () => {
-    if (!isTransitioning) return;
+    if (isAnimating) return;
+    setIsAnimating(true);
     setCurrentIndex((prev) => prev + 1);
+
+    if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
+    transitionTimeoutRef.current = setTimeout(() => {
+      setIsAnimating(false);
+    }, 600);
   };
 
   const handlePrev = () => {
-    if (!isTransitioning) return;
+    if (isAnimating) return;
+    setIsAnimating(true);
     setCurrentIndex((prev) => prev - 1);
+
+    if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
+    transitionTimeoutRef.current = setTimeout(() => {
+      setIsAnimating(false);
+    }, 600);
   };
 
   const handleTransitionEnd = () => {
@@ -95,6 +157,11 @@ export default function Gallery() {
     } else if (currentIndex === galleryItems.length + 1) {
       setIsTransitioning(false);
       setCurrentIndex(1);
+    }
+    setIsAnimating(false);
+    if (transitionTimeoutRef.current) {
+      clearTimeout(transitionTimeoutRef.current);
+      transitionTimeoutRef.current = null;
     }
   };
 
@@ -146,17 +213,17 @@ export default function Gallery() {
                       className="w-full shrink-0 px-2"
                     >
                       <div
-                        className="rounded-3xl overflow-hidden bg-brand-cream-soft border border-brand-grey-light hover:border-brand-green/30 group relative flex flex-col justify-between"
+                        className="rounded-3xl overflow-hidden bg-brand-cream border border-brand-grey-light hover:border-brand-green/30 group relative flex flex-col justify-between shadow-sm"
                       >
                         {/* Actual Image */}
                         <div 
-                          className="w-full relative overflow-hidden aspect-[3/2] bg-brand-cream-soft cursor-zoom-in group/img"
+                          className="w-full aspect-[4/5] relative overflow-hidden bg-brand-cream cursor-zoom-in group/img flex items-center justify-center p-2"
                           onClick={() => setActiveImage(item.imageSrc)}
                         >
                           <img
                             src={item.imageSrc}
                             alt={item.title}
-                            className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.02]"
+                            className="max-w-full max-h-full object-contain transition-transform duration-700 hover:scale-[1.02] rounded-2xl"
                             loading="lazy"
                           />
                           {/* Zoom Icon overlay */}
@@ -169,7 +236,7 @@ export default function Gallery() {
 
                         {/* Mobile Info Tag */}
                         <div className="p-4 bg-brand-cream border-t border-brand-grey-light flex flex-col items-start text-left">
-                          <span className="text-[9px] uppercase tracking-wider font-semibold text-brand-green">
+                          <span className="text-[9px] uppercase tracking-wider font-semibold text-brand-dark-soft">
                             {item.category}
                           </span>
                           <h4 className="text-xs font-bold text-brand-dark mt-0.5">
@@ -199,34 +266,34 @@ export default function Gallery() {
               </button>
             </div>
           ) : (
-            <div className="grid md:grid-cols-3 md:grid-rows-2 gap-6 md:h-[600px] lg:h-[700px] xl:h-[800px]">
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
               {galleryItems.map((item) => (
                 <div
                   key={item.id}
-                  className={`gallery-item-desktop rounded-3xl overflow-hidden bg-brand-cream-soft border border-brand-grey-light hover:border-brand-green/30 group relative flex flex-col justify-between cursor-zoom-in ${item.gridClass}`}
+                  className="gallery-item-desktop break-inside-avoid mb-6 rounded-3xl overflow-hidden bg-brand-cream-soft border border-brand-grey-light hover:border-brand-green/30 group relative flex flex-col justify-between cursor-zoom-in"
                   onClick={() => setActiveImage(item.imageSrc)}
                 >
                   {/* Actual Image */}
-                  <div className="w-full h-full relative overflow-hidden bg-brand-cream-soft">
+                  <div className="w-full relative overflow-hidden bg-brand-cream-soft">
                     <img
                       src={item.imageSrc}
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                       loading="lazy"
                     />
 
                     {/* Premium overlay visible on hover */}
-                    <div className="absolute inset-0 bg-brand-dark/45 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-between justify-between flex-col p-6 pointer-events-none">
+                    <div className="absolute inset-0 bg-brand-dark/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-between justify-between flex-col p-6 pointer-events-none">
                       <div className="flex justify-end w-full">
                         <span className="bg-brand-cream/90 text-brand-dark p-2.5 rounded-full shadow-lg">
                           <Maximize2 size={16} />
                         </span>
                       </div>
                       <div className="text-left text-brand-cream translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
-                        <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-green block mb-1">
+                        <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-cream-soft block mb-1">
                           {item.category}
                         </span>
-                        <h4 className="font-serif text-base font-bold">
+                        <h4 className="font-serif text-base font-bold text-brand-cream">
                           {item.title}
                         </h4>
                       </div>
