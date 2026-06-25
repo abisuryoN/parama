@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://paramaterpal.com/sitemap.xml
+Sitemap: https://paramaterpal.vercel.app/sitemap.xml
