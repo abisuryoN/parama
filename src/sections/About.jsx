@@ -63,23 +63,23 @@ export default function About() {
   const features = [
     {
       icon: <Droplets className="text-brand-green" size={24} />,
-      title: 'Perlindungan Tahan Air',
-      description: 'Mencegah air tanah, rumput basah, dan embun pagi merembes ke matras Anda.'
+      title: 'Water-Resistant Protection',
+      description: 'Prevents ground moisture, wet grass, and morning dew from seeping into your mat.'
     },
     {
       icon: <Zap className="text-brand-green" size={24} />,
-      title: 'Ringan & Praktis',
-      description: 'Sangat mudah dilipat dan ringan untuk dibawa ke mana saja untuk sesi latihan outdoor Anda.'
+      title: 'Lightweight & Portable',
+      description: 'Easy to fold and carry, fitting seamlessly into your outdoor yoga routine.'
     },
     {
       icon: <Sparkles className="text-brand-green" size={24} />,
-      title: 'Alas Nyaman & Bersih',
-      description: 'Memberikan lapisan pembatas yang bersih dan rata antara matras dengan tanah.'
+      title: 'Comfortable Practice',
+      description: 'Creates a clean, stable, and comfortable layer between your mat and the ground.'
     },
     {
       icon: <Shield className="text-brand-green" size={24} />,
-      title: 'Bahan Terpal Premium',
-      description: 'Material berkualitas tinggi yang kuat, tebal, dan awet untuk penggunaan jangka panjang.'
+      title: 'Durable Material',
+      description: 'Crafted with premium quality materials for long-lasting protection and performance.'
     }
   ];
 
@@ -92,34 +92,60 @@ export default function About() {
       <div className="max-w-[90%] w-full mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="about-title text-center max-w-2xl mx-auto mb-16 md:mb-20">
-          <span className="text-xs font-bold uppercase tracking-widest text-brand-green">Tentang Kami</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-brand-green">About Us</span>
           <h2 className="font-serif text-3xl md:text-4xl font-bold tracking-tight text-brand-dark mt-2">
-            Tentang Kami
+            About Us
           </h2>
           <div className="w-16 h-1 bg-brand-green mx-auto mt-4 rounded-full"></div>
         </div>
 
         {/* Section Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Brand Story Column */}
           <div className="about-content lg:col-span-6 text-left">
-            <div className="space-y-5 mb-10">
-              <p className="text-sm md:text-base text-brand-grey leading-relaxed">
-                Parama Terpal lahir dari kebutuhan akan alas matras yang lebih bersih, nyaman, dan tahan lama. Kami menyediakan terpal premium yang membantu melindungi matras dari debu, kotoran, permukaan lembap, serta kondisi lingkungan yang kurang ideal.
+            <div className="space-y-4 mb-6">
+              <p className="text-sm md:text-base text-brand-grey font-serif italic leading-relaxed">
+                We believe that every outdoor yoga practice deserves a clean, comfortable, and worry-free foundation.
               </p>
               <p className="text-xs md:text-sm text-brand-grey leading-relaxed">
-                Dengan material berkualitas dan desain yang praktis, produk Parama Terpal cocok digunakan untuk berbagai kebutuhan, mulai dari penggunaan di rumah, kegiatan outdoor, camping, piknik, yoga, hingga aktivitas sehari-hari yang membutuhkan alas pelindung yang kuat dan mudah dibersihkan.
+                Born from the simple challenges of practicing yoga outdoors, wet grass, damp surfaces, dirt, and uneven ground, Parama was created as a practical solution to help protect your yoga mat wherever your journey takes you.
               </p>
               <p className="text-xs md:text-sm text-brand-grey leading-relaxed">
-                Kami percaya bahwa kenyamanan dimulai dari fondasi yang baik. Karena itu, setiap produk Parama Terpal dirancang untuk memberikan perlindungan maksimal sekaligus kemudahan penggunaan bagi pelanggan.
+                Our grounding sheets are lightweight, easy to fold, waterproof, and designed to fit seamlessly into your outdoor yoga routine. Whether you're practicing in a park, garden, beach, or open field, Parama helps create a cleaner space between your mat and the ground beneath it.
+              </p>
+              <p className="text-xs md:text-sm text-brand-grey leading-relaxed">
+                More than just a protective layer, Parama is a companion for mindful movement, connection with nature, and meaningful moments shared through outdoor practice.
+              </p>
+              <p className="text-xs md:text-sm font-semibold text-brand-dark leading-relaxed">
+                Simple. Practical. Made for Every Outdoor Flow.
               </p>
               <p className="text-xs md:text-sm font-bold text-brand-green font-mono">
                 Let's #GroundingWithParama
               </p>
             </div>
 
+            <div className="border-t border-brand-grey-light pt-4 mb-10 space-y-3 opacity-60 hover:opacity-100 transition-opacity duration-300">
+              <p className="text-[11px] md:text-xs text-brand-grey font-serif italic leading-relaxed">
+                Kami percaya bahwa setiap latihan yoga luar ruangan layak mendapatkan landasan yang bersih, nyaman, dan bebas khawatir.
+              </p>
+              <p className="text-[10px] md:text-[11px] text-brand-grey leading-relaxed">
+                Lahir dari tantangan sederhana saat berlatih yoga di luar ruangan—rumput basah, permukaan lembap, kotoran, dan tanah yang tidak rata—Parama diciptakan sebagai solusi praktis untuk membantu melindungi matras yoga Anda ke mana pun perjalanan Anda membawa Anda.
+              </p>
+              <p className="text-[10px] md:text-[11px] text-brand-grey leading-relaxed">
+                Grounding sheet kami ringan, mudah dilipat, tahan air, dan dirancang untuk menyatu secara mulus dengan rutinitas yoga luar ruangan Anda. Baik saat Anda berlatih di taman, kebun, pantai, atau lapangan terbuka, Parama membantu menciptakan ruang yang lebih bersih antara matras Anda dan tanah di bawahnya.
+              </p>
+              <p className="text-[10px] md:text-[11px] text-brand-grey leading-relaxed">
+                Lebih dari sekadar lapisan pelindung, Parama adalah pendamping untuk gerakan sadar (mindful movement), koneksi dengan alam, dan momen-momen bermakna yang dibagikan melalui latihan di luar ruangan.
+              </p>
+              <p className="text-[10px] md:text-[11px] font-semibold text-brand-dark leading-relaxed">
+                Sederhana. Praktis. Dibuat untuk Setiap Aliran Luar Ruangan Anda.
+              </p>
+              <p className="text-[10px] md:text-[11px] font-bold text-brand-green font-mono">
+                Mari #GroundingWithParama
+              </p>
+            </div>
+
             {/* Quote block */}
-            <div className="border-l-4 border-brand-green pl-6 py-2 bg-brand-cream-soft rounded-r-xl mt-10">
+            <div className="border-l-4 border-brand-green pl-6 py-2 bg-brand-cream-soft rounded-r-xl">
               <p className="italic text-xs text-brand-dark font-medium leading-relaxed">
                 "A protective layer between your yoga mat and outdoor surfaces, helping keep your practice cleaner and more comfortable."
               </p>

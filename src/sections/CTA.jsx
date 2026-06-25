@@ -47,48 +47,41 @@ export default function CTA() {
               Connect With Us
             </span>
 
-            <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight mb-4 leading-tight">
-              Kontak
+            <h2 className="font-serif text-3xl md:text-5xl font-bold tracking-tight mb-6 max-w-2xl leading-tight">
+              Ready to Elevate Your Outdoor Yoga Experience?
             </h2>
 
-            <p className="text-base md:text-lg font-medium text-brand-cream/90 mb-4 max-w-xl">
-              Ready to Elevate Your Outdoor Practice? Contact Us Today.
-            </p>
-
-            <p className="text-xs md:text-sm text-brand-cream/80 mb-10 max-w-lg leading-relaxed">
-              Kami di sini untuk membantu Anda menemukan terpal alas matras premium yang tepat untuk rutinitas kesehatan Anda. Hubungi kami melalui Instagram atau WhatsApp untuk pemesanan atau konsultasi dengan tim kami.
+            <p className="text-sm md:text-base text-brand-cream/90 mb-10 max-w-xl leading-relaxed">
+              Create a cleaner and more comfortable space for every practice with Parama grounding sheets.
             </p>
 
             {/* CTA Buttons Grid */}
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto">
               <a
-                href="https://www.instagram.com/parama.wellness"
+                href="https://wa.me/6281294924003" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-brand-cream text-brand-dark hover:bg-brand-cream-soft font-sans font-medium text-xs md:text-sm tracking-wider uppercase transition-all duration-300 shadow-md hover:-translate-y-0.5 active:scale-[0.98]"
               >
-                <Instagram size={18} className="text-brand-green" />
-                <span>Instagram</span>
+                <Send size={16} className="text-brand-green animate-pulse" />
+                <span>Contact Us</span>
               </a>
 
               <a
-                href="https://www.threads.net/@parama.wellness"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#products"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full border border-brand-cream/40 bg-transparent text-brand-cream hover:bg-brand-cream/10 font-sans font-medium text-xs md:text-sm tracking-wider uppercase transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98]"
               >
-                <span className="font-bold text-base leading-none">@</span>
-                <span>Threads</span>
+                <span>View Products</span>
               </a>
 
               <a
-                href="https://wa.me/6281294924003" 
+                href="https://www.instagram.com/parama.wellness"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-brand-dark text-brand-cream hover:bg-brand-dark-soft font-sans font-medium text-xs md:text-sm tracking-wider uppercase transition-all duration-300 shadow-md hover:-translate-y-0.5 active:scale-[0.98]"
               >
-                <Send size={16} />
-                <span>Contact Us</span>
+                <Instagram size={18} />
+                <span>Instagram</span>
               </a>
             </div>
           </div>

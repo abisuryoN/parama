@@ -58,65 +58,74 @@ export default function Gallery() {
   const galleryItems = [
     {
       id: 1,
-      title: 'Latihan Yoga Outdoor dengan Terpal Alas Matras Parama',
-      category: 'Alas Matras Outdoor',
+      title: 'Outdoor Yoga Practice with Parama Grounding Sheet',
+      category: 'Outdoor Grounding Sheet',
       imageSrc: '/gakeri1.jpg',
+      alt: 'Outdoor Yoga Practice with Parama Grounding Sheet | Alas Matras Yoga Outdoor Premium',
       gridClass: 'md:col-span-2 md:row-span-2'
     },
     {
       id: 2,
-      title: 'Sesi Relaksasi Yoga dengan Alas Matras Waterproof Parama',
-      category: 'Alas Matras Waterproof',
+      title: 'Relaxing Yoga Session with Parama Water-Resistant Grounding Sheet',
+      category: 'Water-Resistant Protection',
       imageSrc: '/galeri2.jpg',
+      alt: 'Relaxing Yoga Session with Parama Water-Resistant Grounding Sheet | Alas Matras Yoga Outdoor Waterproof',
       gridClass: 'md:col-span-1 md:row-span-1'
     },
     {
       id: 3,
-      title: 'Retreat Yoga di Alam Terbuka Menggunakan Terpal Premium Parama',
-      category: 'Terpal Premium',
+      title: 'Yoga Retreat in Nature Using Parama Premium Grounding Sheet',
+      category: 'Premium Grounding Sheet',
       imageSrc: '/galeri3.jpg',
+      alt: 'Yoga Retreat in Nature Using Parama Premium Grounding Sheet | Terpal Premium Yoga Parama',
       gridClass: 'md:col-span-1 md:row-span-1'
     },
     {
       id: 4,
-      title: 'Latihan Pernapasan Nyaman dengan Terpal Pelindung Matras Parama',
-      category: 'Terpal Pelindung Matras',
+      title: 'Comfortable Breathwork with Parama Yoga Mat Protection Layer',
+      category: 'Yoga Mat Protection Layer',
       imageSrc: '/galeri4.jpg',
+      alt: 'Comfortable Breathwork with Parama Yoga Mat Protection Layer | Pelindung Matras Yoga Outdoor',
       gridClass: 'md:col-span-1 md:row-span-1'
     },
     {
       id: 5,
-      title: 'Sesi Peregangan Pagi dengan Alas Matras Yoga Outdoor Parama',
-      category: 'Alas Matras Yoga Outdoor',
+      title: 'Morning Stretch Session with Parama Outdoor Grounding Sheet',
+      category: 'Outdoor Grounding Sheet',
       imageSrc: '/galeri5.jpg',
+      alt: 'Morning Stretch Session with Parama Outdoor Grounding Sheet | Alas Yoga Outdoor',
       gridClass: 'md:col-span-1 md:row-span-1'
     },
     {
       id: 6,
-      title: 'Area Meditasi Bersih Menggunakan Terpal Alas Matras Parama',
-      category: 'Terpal Alas Matras',
+      title: 'Clean Meditation Space Using Parama Grounding Sheet',
+      category: 'Grounding Sheet',
       imageSrc: '/galeri6.jpg',
+      alt: 'Clean Meditation Space Using Parama Grounding Sheet | Alas Matras Premium',
       gridClass: 'md:col-span-1 md:row-span-2'
     },
     {
       id: 7,
-      title: 'Piknik dan Yoga di Hutan Menggunakan Alas Matras Outdoor Parama',
-      category: 'Alas Matras Outdoor',
+      title: 'Forest Picnic and Yoga Using Parama Outdoor Grounding Sheet',
+      category: 'Outdoor Grounding Sheet',
       imageSrc: '/galeri7.jpg',
+      alt: 'Forest Picnic and Yoga Using Parama Outdoor Grounding Sheet | Alas Matras Camping',
       gridClass: 'md:col-span-2 md:row-span-1'
     },
     {
       id: 8,
-      title: 'Latihan Yoga Sunset Menenangkan dengan Terpal Premium Parama',
-      category: 'Terpal Premium',
+      title: 'Tranquil Sunset Yoga with Parama Premium Grounding Sheet',
+      category: 'Premium Grounding Sheet',
       imageSrc: '/galeri8.jpg',
+      alt: 'Tranquil Sunset Yoga with Parama Premium Grounding Sheet | Terpal Alas Matras Premium',
       gridClass: 'md:col-span-2 md:row-span-1'
     },
     {
       id: 9,
-      title: 'Meditasi Ketenangan Jiwa dengan Terpal Pelindung Matras Parama',
-      category: 'Terpal Pelindung Matras',
+      title: 'Mindful Meditation with Parama Yoga Mat Protection Layer',
+      category: 'Yoga Mat Protection Layer',
       imageSrc: '/galeri9.jpg',
+      alt: 'Mindful Meditation with Parama Yoga Mat Protection Layer | Pelindung Matras Outdoor',
       gridClass: 'md:col-span-1 md:row-span-1'
     }
   ];
@@ -222,7 +231,7 @@ export default function Gallery() {
                         >
                           <img
                             src={item.imageSrc}
-                            alt={item.title}
+                            alt={item.alt || item.title}
                             className="max-w-full max-h-full object-contain transition-transform duration-700 hover:scale-[1.02] rounded-2xl"
                             loading="lazy"
                           />
@@ -277,7 +286,7 @@ export default function Gallery() {
                   <div className="w-full relative overflow-hidden bg-brand-cream-soft">
                     <img
                       src={item.imageSrc}
-                      alt={item.title}
+                      alt={item.alt || item.title}
                       className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                       loading="lazy"
                     />

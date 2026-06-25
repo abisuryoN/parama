@@ -13,7 +13,7 @@ export default function Footer() {
           <a href="#" className="flex items-center gap-2 group mb-5">
             <img
               src="/logo.png"
-              alt="Logo Parama Terpal - Terpal Pelindung Matras"
+              alt="Parama Premium Yoga Mat Protection Layer | Terpal Yoga Premium Parama"
               className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <span className="font-serif text-xl font-bold tracking-tight text-brand-cream group-hover:text-brand-green transition-colors duration-300">
@@ -21,7 +21,7 @@ export default function Footer() {
             </span>
           </a>
           <p className="text-xs md:text-sm text-brand-cream/60 leading-relaxed max-w-sm mb-6">
-            Parama Terpal menyediakan terpal alas matras premium dan alas matras outdoor waterproof pelindung matras terbaik untuk yoga, camping, dan piknik.
+            PARAMA provides premium grounding sheets, designed to protect your yoga mat and enhance your outdoor practice.
           </p>
           <div className="flex gap-3">
             <a
@@ -57,23 +57,23 @@ export default function Footer() {
         {/* Quick Links Column */}
         <div className="md:col-span-3 text-left">
           <h4 className="text-xs uppercase tracking-widest font-bold text-brand-cream mb-5 border-l-2 border-brand-green pl-3">
-            Navigasi
+            Navigation
           </h4>
           <ul className="flex flex-col gap-3 text-xs md:text-sm">
             <li>
-              <a href="#about" className="hover:text-brand-green transition-colors duration-200">Tentang Kami</a>
+              <a href="#about" className="hover:text-brand-green transition-colors duration-200">About Us</a>
             </li>
             <li>
-              <a href="#products" className="hover:text-brand-green transition-colors duration-200">Produk</a>
+              <a href="#products" className="hover:text-brand-green transition-colors duration-200">Our Product</a>
             </li>
             <li>
-              <a href="#gallery" className="hover:text-brand-green transition-colors duration-200">Galeri</a>
+              <a href="#gallery" className="hover:text-brand-green transition-colors duration-200">Gallery</a>
             </li>
             <li>
-              <a href="#why-us" className="hover:text-brand-green transition-colors duration-200">Keunggulan</a>
+              <a href="#why-us" className="hover:text-brand-green transition-colors duration-200">Benefits</a>
             </li>
             <li>
-              <a href="#testimonials" className="hover:text-brand-green transition-colors duration-200">Testimoni</a>
+              <a href="#testimonials" className="hover:text-brand-green transition-colors duration-200">Testimonial</a>
             </li>
             <li>
               <a href="#faq" className="hover:text-brand-green transition-colors duration-200">FAQ</a>
@@ -84,7 +84,7 @@ export default function Footer() {
         {/* Contact Info Column */}
         <div className="md:col-span-4 text-left">
           <h4 className="text-xs uppercase tracking-widest font-bold text-brand-cream mb-5 border-l-2 border-brand-green pl-3">
-            Kontak Kami
+            Contact Us
           </h4>
           <ul className="flex flex-col gap-3 text-xs md:text-sm text-brand-cream/60">
             <li className="flex flex-col">

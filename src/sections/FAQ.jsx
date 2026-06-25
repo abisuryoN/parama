@@ -28,24 +28,24 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: 'Apa itu terpal alas matras premium Parama?',
-      answer: 'Parama menghadirkan terpal alas matras premium yang dirancang khusus sebagai pelindung matras yoga Anda saat latihan di area outdoor. Produk ini lahir dari kebutuhan akan latihan yoga yang lebih bersih, higienis, dan nyaman di alam terbuka.'
+      question: 'What is the Parama premium grounding sheet?',
+      answer: 'Parama premium grounding sheet is specifically designed as a protective layer for your yoga mat during outdoor practice. Born from the need for a cleaner, more hygienic, and comfortable yoga practice in nature.'
     },
     {
-      question: 'Apakah alas matras outdoor Parama terbukti waterproof?',
-      answer: 'Ya, alas matras outdoor Parama terbuat dari bahan waterproof berkualitas tinggi yang sepenuhnya tahan air. Ini mencegah kelembapan tanah, rumput basah, atau embun pagi merembes ke matras yoga Anda.'
+      question: 'Is the Parama outdoor grounding sheet waterproof?',
+      answer: 'Yes, the Parama grounding sheet is made from high-quality water-resistant material, preventing ground moisture, wet grass, and damp sand from seeping into your yoga mat.'
     },
     {
-      question: 'Mengapa harus memilih terpal premium dari Parama?',
-      answer: 'Terpal premium Parama memiliki keunggulan berupa material yang tebal namun tetap ringan, mudah dilipat, tahan lama (tear-resistant), dan sangat praktis untuk dibawa bepergian ke sesi latihan outdoor maupun retreat yoga.'
+      question: 'Why choose a premium grounding sheet from Parama?',
+      answer: 'Parama grounding sheets are crafted from premium materials that are extra thick yet lightweight, easy to fold, tear-resistant, and highly portable for outdoor sessions or yoga retreats.'
     },
     {
-      question: 'Apakah terpal pelindung matras ini mudah dibersihkan?',
-      answer: 'Sangat mudah! Kotoran, noda tanah, rumput basah, dan debu dapat dibersihkan dengan mudah cukup dengan menyekanya menggunakan kain basah atau kanebo setelah selesai digunakan.'
+      question: 'Is this yoga mat protection layer easy to clean?',
+      answer: 'Very easy! Dirt, soil, grass stains, and dust can be easily wiped clean with a damp cloth or towel after your practice.'
     },
     {
-      question: 'Bagaimana cara membawa alas matras yoga outdoor Parama?',
-      answer: 'Alas matras yoga outdoor Parama dirancang sangat compact dan fleksibel. Anda dapat melipatnya dengan mudah hingga ukuran kecil dan memasukkannya ke dalam tas jinjing yoga atau ransel olahraga Anda tanpa menambah beban berat.'
+      question: 'How do I carry the Parama grounding sheet?',
+      answer: 'It is designed to be highly compact and flexible. You can fold it easily into a small package and fit it into your yoga bag or backpack without adding extra weight.'
     }
   ];
 
@@ -63,7 +63,7 @@ export default function FAQ() {
             FAQ
           </h2>
           <p className="text-xs md:text-sm text-brand-grey mt-3 max-w-lg mx-auto">
-            Temukan jawaban atas pertanyaan umum seputar terpal alas matras outdoor dari Parama.
+            Find answers to frequently asked questions about Parama outdoor grounding sheets.
           </p>
           <div className="w-16 h-1 bg-brand-green mx-auto mt-4 rounded-full"></div>
         </div>

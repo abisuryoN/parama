@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import Button from '../components/Button';
 import PlaceholderImage from '../components/PlaceholderImage';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -44,8 +44,8 @@ export default function Hero() {
           </div>
 
           <h1 className="hero-text font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-brand-dark leading-[1.15]">
-            Terpal Alas Matras <br />
-            <span className="text-brand-green italic font-medium">Premium dari Parama Terpal</span>
+            Premium Outdoor <br />
+            <span className="text-brand-green italic font-medium">Yoga Grounding Sheet</span>
           </h1>
         </div>
 
@@ -59,7 +59,7 @@ export default function Hero() {
             <div className="relative overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl border border-brand-grey-light bg-brand-cream-soft">
               <img
                 src="/hero1.jpg"
-                alt="Terpal alas matras premium Parama Terpal untuk alas matras yoga outdoor"
+                alt="Parama Outdoor Yoga Grounding Sheet | Alas Matras Yoga Outdoor Premium"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 loading="eager"
               />
@@ -69,30 +69,38 @@ export default function Hero() {
 
         {/* Description & CTA Block */}
         <div className="col-span-1 lg:col-span-7 flex flex-col items-start text-left z-10 order-3">
-          <p className="hero-text text-sm md:text-base text-brand-grey max-w-xl mb-4 font-serif italic">
-            Parama Terpal menghadirkan terpal alas matras berkualitas premium yang dirancang untuk memberikan perlindungan maksimal, kenyamanan, dan daya tahan tinggi. Cocok digunakan untuk kebutuhan rumah, aktivitas outdoor, camping, yoga, hingga berbagai kegiatan lainnya.
-          </p>
-
-          <p className="hero-text text-xs md:text-sm text-brand-grey max-w-xl mb-8 leading-relaxed">
-            Parama Terpal lahir dari kebutuhan akan alas matras yang lebih bersih, nyaman, dan tahan lama. Kami menyediakan terpal premium yang membantu melindungi matras dari debu, kotoran, permukaan lembap, serta kondisi lingkungan yang kurang ideal.
-          </p>
+          <div className="hero-text space-y-4 mb-8">
+            <p className="text-sm md:text-base text-brand-grey font-serif italic leading-relaxed">
+              We believe that every outdoor yoga practice deserves a clean, comfortable, and worry-free foundation.
+            </p>
+            <p className="text-xs md:text-sm text-brand-grey leading-relaxed">
+              Born from the simple challenges of practicing yoga outdoors, wet grass, damp surfaces, dirt, and uneven ground, Parama was created as a practical solution to help protect your yoga mat wherever your journey takes you.
+            </p>
+            <p className="text-xs md:text-sm text-brand-grey leading-relaxed">
+              Our grounding sheets are lightweight, easy to fold, waterproof, and designed to fit seamlessly into your outdoor yoga routine. Whether you're practicing in a park, garden, beach, or open field, Parama helps create a cleaner space between your mat and the ground beneath it.
+            </p>
+            <p className="text-xs md:text-sm text-brand-grey leading-relaxed">
+              More than just a protective layer, Parama is a companion for mindful movement, connection with nature, and meaningful moments shared through outdoor practice.
+            </p>
+            <p className="text-xs md:text-sm font-semibold text-brand-dark leading-relaxed">
+              Simple. Practical. Made for Every Outdoor Flow.
+            </p>
+            <p className="text-xs md:text-sm font-bold text-brand-green font-mono">
+              Let's #GroundingWithParama
+            </p>
+          </div>
 
           <div className="hero-text flex flex-wrap gap-4 items-center">
             <Button href="#contact" variant="primary" className="flex items-center gap-2">
               Contact Us <ArrowRight size={16} />
             </Button>
-            <Button href="#products" variant="secondary">
+            <Button href="#products" variant="white">
               Our Product
             </Button>
           </div>
         </div>
       </div>
 
-      {/* Down arrow link indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-1 opacity-40 hover:opacity-100 transition-opacity duration-300">
-        <span className="text-[10px] uppercase tracking-widest font-semibold">Explore More</span>
-        <ChevronDown size={16} className="animate-bounce" />
-      </div>
     </section>
   );
 }

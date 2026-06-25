@@ -31,43 +31,43 @@ export default function WhyChooseUs() {
   const reasons = [
     {
       icon: <Droplets size={28} className="text-brand-green" />,
-      title: 'Perlindungan Waterproof',
-      description: 'Tahan air sepenuhnya, mencegah rumput basah, embun pagi, atau pasir basah merembes ke matras Anda.'
+      title: 'Water-Resistant Protection',
+      description: 'Completely waterproof to prevent wet grass, morning dew, or damp sand from seeping into your yoga mat.'
     },
     {
       icon: <Wind size={28} className="text-brand-green" />,
-      title: 'Ringan & Mudah Dibawa',
-      description: 'Sangat ringan dan praktis untuk dilipat, memudahkan Anda membawanya bersama dengan matras yoga.'
+      title: 'Lightweight & Portable',
+      description: 'Extremely lightweight and compact to carry alongside your yoga mat.'
     },
     {
       icon: <Layers size={28} className="text-brand-green" />,
-      title: 'Mudah Dilipat',
-      description: 'Didesain untuk pelipatan cepat dan mudah disimpan ke dalam tas olahraga atau jinjing Anda.'
+      title: 'Easy to Fold',
+      description: 'Designed for quick folding and effortless storage in your gym or carry bag.'
     },
     {
       icon: <Sparkles size={28} className="text-brand-green" />,
-      title: 'Mudah Dibersihkan',
-      description: 'Kotoran, tanah basah, dan debu dapat dibersihkan dengan mudah cukup menyekanya menggunakan kain lembap.'
+      title: 'Easy to Clean',
+      description: 'Dirt, soil, and dust can be easily wiped away with a damp cloth.'
     },
     {
       icon: <Compass size={28} className="text-brand-green" />,
-      title: 'Siap untuk Aktivitas Outdoor',
-      description: 'Dirancang tangguh untuk berbagai jenis permukaan tanah, mulai dari taman, pantai, hingga area perkemahan.'
+      title: 'Outdoor Ready',
+      description: 'Built to perform on any outdoor surface, from parks and beaches to gardens.'
     },
     {
       icon: <ShieldCheck size={28} className="text-brand-green" />,
-      title: 'Alas Pelindung yang Nyaman',
-      description: 'Membentuk lapisan pembatas yang bersih dan rata antara matras premium Anda dengan tanah alami.'
+      title: 'Comfortable Practice',
+      description: 'Provides a clean and even barrier between your premium mat and the natural ground.'
     },
     {
       icon: <Zap size={28} className="text-brand-green" />,
-      title: 'Bahan Terpal Premium Awet',
-      description: 'Dibuat dengan bahan terpal premium berkualitas tinggi dan jahitan kuat untuk penggunaan jangka panjang.'
+      title: 'Durable Material',
+      description: 'Made with premium, high-quality materials and strong stitching for long-lasting use.'
     },
     {
       icon: <Heart size={28} className="text-brand-green" />,
-      title: 'Dirancang untuk Yoga & Outdoor',
-      description: 'Dirancang khusus untuk mendukung sesi latihan yoga outdoor, retreat meditasi, piknik, dan kegiatan alam bebas.'
+      title: 'Designed for Yoga & Outdoor',
+      description: 'Specifically crafted to support outdoor yoga, meditation retreats, and wellness events.'
     }
   ];
 
@@ -80,9 +80,9 @@ export default function WhyChooseUs() {
       <div className="max-w-[90%] w-full mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-          <span className="text-xs font-bold uppercase tracking-widest text-brand-green">Keunggulan</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-brand-green">Benefits</span>
           <h2 className="font-serif text-3xl md:text-4xl font-bold tracking-tight text-brand-dark mt-2">
-            Keunggulan Produk
+            Benefits
           </h2>
           <div className="w-16 h-1 bg-brand-green mx-auto mt-4 rounded-full"></div>
         </div>

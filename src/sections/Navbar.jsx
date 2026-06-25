@@ -55,11 +55,11 @@ export default function Navbar() {
   }, { scope: containerRef });
 
   const navLinks = [
-    { label: 'Tentang Kami', href: '#about' },
-    { label: 'Produk', href: '#products' },
-    { label: 'Galeri', href: '#gallery' },
-    { label: 'Keunggulan', href: '#why-us' },
-    { label: 'Testimoni', href: '#testimonials' },
+    { label: 'About Us', href: '#about' },
+    { label: 'Our Product', href: '#products' },
+    { label: 'Gallery', href: '#gallery' },
+    { label: 'Benefits', href: '#why-us' },
+    { label: 'Testimonial', href: '#testimonials' },
     { label: 'FAQ', href: '#faq' },
   ];
 
@@ -77,7 +77,7 @@ export default function Navbar() {
           <a href="#" className="nav-item flex items-center gap-2 group">
             <img
               src="/logo.png"
-              alt="Logo Parama Terpal - Produsen Terpal Alas Matras Premium"
+              alt="Parama Outdoor Yoga Grounding Sheet | Alas Matras Yoga Outdoor Premium"
               className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
             <span className="font-serif text-xl font-bold tracking-tight text-brand-dark group-hover:text-brand-green transition-colors duration-300">
@@ -112,7 +112,7 @@ export default function Navbar() {
                   : 'bg-brand-dark text-brand-cream hover:bg-brand-green'
               }`}
             >
-              Kontak
+              Contact Us
               <ArrowUpRight size={13} />
             </a>
           </nav>
@@ -182,7 +182,7 @@ export default function Navbar() {
                 : 'bg-brand-dark text-brand-cream hover:bg-brand-green'
             }`}
           >
-            Kontak
+            Contact Us
             <ArrowUpRight size={14} />
           </a>
         </nav>
@@ -211,7 +211,7 @@ export default function Navbar() {
             }`}
           >
             <Info size={18} />
-            <span>Tentang Kami</span>
+            <span>About Us</span>
           </a>
           <a 
             href="#products" 
@@ -222,7 +222,7 @@ export default function Navbar() {
             }`}
           >
             <ShoppingBag size={18} />
-            <span>Produk</span>
+            <span>Our Product</span>
           </a>
           <a 
             href="#gallery" 
@@ -233,7 +233,7 @@ export default function Navbar() {
             }`}
           >
             <Image size={18} />
-            <span>Galeri</span>
+            <span>Gallery</span>
           </a>
           <a 
             href="#why-us" 
@@ -244,7 +244,7 @@ export default function Navbar() {
             }`}
           >
             <Sparkles size={18} />
-            <span>Keunggulan</span>
+            <span>Benefits</span>
           </a>
           <a 
             href="#testimonials" 
@@ -255,7 +255,7 @@ export default function Navbar() {
             }`}
           >
             <MessageSquare size={18} />
-            <span>Testimoni</span>
+            <span>Testimonial</span>
           </a>
           <a 
             href="#faq" 
@@ -277,7 +277,7 @@ export default function Navbar() {
             }`}
           >
             <Phone size={18} />
-            <span>Kontak</span>
+            <span>Contact Us</span>
           </a>
           <a 
             href="https://wa.me/6281294924003" 

@@ -10,16 +10,16 @@ export default function Testimonials() {
   const [zoomImage, setZoomImage] = useState(null);
   const cardRef = useRef(null);
   const reviews = [
-    { image: '/testimoni1.jpg', alt: 'Review konsumen Parama Terpal - terpal alas matras premium' },
-    { image: '/testimoni2.jpg', alt: 'Testimonial alas matras outdoor waterproof Parama Terpal' },
-    { image: '/testimoni3.jpg', alt: 'Review matras yoga outdoor dengan terpal pelindung matras Parama' },
-    { image: '/testimoni4.jpg', alt: 'Testimonial terpal premium alas matras yoga Parama' },
-    { image: '/testimoni5.jpg', alt: 'Pengalaman menggunakan alas matras yoga outdoor waterproof Parama' },
-    { image: '/testimoni6.jpg', alt: 'Review terpal pelindung matras premium Parama untuk camping' },
-    { image: '/testimoni7.jpg', alt: 'Testimonial terpal alas matras waterproof Parama untuk piknik' },
-    { image: '/testimoni8.jpg', alt: 'Review alas matras yoga outdoor Parama Terpal warna hitam' },
-    { image: '/testimoni9.jpg', alt: 'Testimonial terpal premium alas matras outdoor Parama Terpal' },
-    { image: '/testimoni10.jpg', alt: 'Review terpal pelindung matras yoga outdoor Parama' }
+    { image: '/testimoni1.jpg', alt: 'Parama Outdoor Yoga Grounding Sheet | Alas Matras Yoga Outdoor Premium' },
+    { image: '/testimoni2.jpg', alt: 'Waterproof Yoga Mat Protector | Pelindung Matras Yoga Outdoor' },
+    { image: '/testimoni3.jpg', alt: 'Grounding Sheet for Outdoor Yoga | Alas Matras Waterproof' },
+    { image: '/testimoni4.jpg', alt: 'Parama Terpal Yoga Outdoor | Premium Grounding Sheet' },
+    { image: '/testimoni5.jpg', alt: 'Alas Matras Yoga Outdoor Waterproof | Grounding Sheet Outdoor Yoga Parama' },
+    { image: '/testimoni6.jpg', alt: 'Terpal Yoga Premium Parama | Premium Yoga Mat Protector' },
+    { image: '/testimoni7.jpg', alt: 'Parama Terpal Alas Matras Premium | Waterproof Grounding Sheet' },
+    { image: '/testimoni8.jpg', alt: 'Yoga Mat Protection Layer by Parama | Pelindung Matras Premium' },
+    { image: '/testimoni9.jpg', alt: 'Parama Outdoor Yoga Grounding Sheet | Alas Matras Premium' },
+    { image: '/testimoni10.jpg', alt: 'Grounding Sheet for Outdoor Yoga | Pelindung Matras Yoga Outdoor' }
   ];
 
   const nextSlide = () => {
@@ -48,7 +48,7 @@ export default function Testimonials() {
         <div className="text-center mb-12">
           <span className="text-xs font-bold uppercase tracking-widest text-brand-green">Testimonial</span>
           <h2 className="font-serif text-3xl md:text-4xl font-bold tracking-tight text-brand-dark mt-2">
-            Testimoni Pelanggan
+            Customer Testimonials
           </h2>
           <div className="w-16 h-1 bg-brand-green mx-auto mt-4 rounded-full"></div>
         </div>

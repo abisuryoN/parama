@@ -18,6 +18,7 @@ export default function Button({
     primary: 'bg-brand-green text-brand-cream hover:bg-brand-green-light hover:shadow-lg hover:shadow-brand-green/20 hover:-translate-y-0.5',
     secondary: 'border border-brand-green text-brand-green hover:bg-brand-green hover:text-brand-cream hover:shadow-md hover:-translate-y-0.5',
     dark: 'bg-brand-dark text-brand-cream hover:bg-brand-dark-soft hover:shadow-lg hover:shadow-brand-dark/20 hover:-translate-y-0.5',
+    white: 'bg-white text-brand-green border border-brand-green/30 hover:bg-brand-cream-soft hover:shadow-md hover:-translate-y-0.5',
   };
 
   const selectedClass = `${baseClasses} ${variants[variant]} ${className}`;
