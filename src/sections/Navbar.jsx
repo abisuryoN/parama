@@ -80,7 +80,7 @@ export default function Navbar() {
               alt="Parama Outdoor Yoga Grounding Sheet | Alas Matras Yoga Outdoor Premium"
               className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="font-serif text-xl font-bold tracking-tight text-brand-dark group-hover:text-brand-green transition-colors duration-300">
+            <span className="font-serif text-xl font-bold tracking-tight text-[#1F4A3D] transition-colors duration-300">
               PARAMA
             </span>
           </a>
@@ -94,11 +94,10 @@ export default function Navbar() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className={`nav-item text-xs uppercase tracking-wider font-bold transition-all duration-300 py-1.5 px-3.5 rounded-full ${
-                    isActive
+                  className={`nav-item text-xs uppercase tracking-wider font-bold transition-all duration-300 py-1.5 px-3.5 rounded-full ${isActive
                       ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
                       : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
-                  }`}
+                    }`}
                 >
                   {link.label}
                 </a>
@@ -106,11 +105,10 @@ export default function Navbar() {
             })}
             <a
               href="#contact"
-              className={`nav-item inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm ${
-                activeSection === 'contact'
+              className={`nav-item inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm ${activeSection === 'contact'
                   ? 'bg-brand-green text-brand-cream scale-105'
                   : 'bg-brand-dark text-brand-cream hover:bg-brand-green'
-              }`}
+                }`}
             >
               Contact Us
               <ArrowUpRight size={13} />
@@ -130,21 +128,20 @@ export default function Navbar() {
 
       {/* Mobile Drawer Overlay */}
       {isOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-50 bg-brand-dark/40 backdrop-blur-sm md:hidden transition-opacity duration-300"
           onClick={() => setIsOpen(false)}
         />
       )}
 
       {/* Mobile Navigation Drawer (Right to Left Slide) */}
-      <div 
-        className={`fixed top-0 right-0 bottom-0 w-[280px] bg-brand-cream z-60 md:hidden flex flex-col p-6 shadow-2xl border-l border-brand-grey-light/30 transition-transform duration-300 ease-in-out ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+      <div
+        className={`fixed top-0 right-0 bottom-0 w-[280px] bg-brand-cream z-60 md:hidden flex flex-col p-6 shadow-2xl border-l border-brand-grey-light/30 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
       >
         <div className="flex justify-between items-center pb-4 border-b border-brand-grey-light/35 mb-6">
           <span className="font-serif text-lg font-bold text-brand-dark">Menu</span>
-          <button 
+          <button
             onClick={() => setIsOpen(false)}
             className="text-brand-dark hover:text-brand-green p-1 transition-colors focus:outline-none cursor-pointer"
             aria-label="Close menu"
@@ -162,11 +159,10 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`text-sm font-bold transition-all duration-300 py-2.5 px-4 rounded-xl flex items-center justify-between ${
-                  isActive
+                className={`text-sm font-bold transition-all duration-300 py-2.5 px-4 rounded-xl flex items-center justify-between ${isActive
                     ? 'bg-brand-green text-brand-cream shadow-sm'
                     : 'text-brand-dark/80 hover:text-brand-green hover:bg-brand-green/5'
-                }`}
+                  }`}
               >
                 <span>{link.label}</span>
                 {isActive && <span className="w-1.5 h-1.5 rounded-full bg-brand-cream"></span>}
@@ -176,11 +172,10 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setIsOpen(false)}
-            className={`inline-flex items-center justify-center gap-2 font-semibold uppercase text-xs tracking-wider py-3 px-5 rounded-full mt-4 shadow-sm transition-all duration-300 ${
-              activeSection === 'contact'
+            className={`inline-flex items-center justify-center gap-2 font-semibold uppercase text-xs tracking-wider py-3 px-5 rounded-full mt-4 shadow-sm transition-all duration-300 ${activeSection === 'contact'
                 ? 'bg-brand-green text-brand-cream scale-105'
                 : 'bg-brand-dark text-brand-cream hover:bg-brand-green'
-            }`}
+              }`}
           >
             Contact Us
             <ArrowUpRight size={14} />
@@ -191,96 +186,88 @@ export default function Navbar() {
       {/* Mobile Bottom Navigation Bar */}
       <div className="fixed bottom-5 left-4 right-4 z-40 bg-brand-cream/80 backdrop-blur-lg border border-brand-grey-light/50 rounded-2xl shadow-xl shadow-brand-dark/10 md:hidden overflow-hidden">
         <div className="flex items-center gap-1.5 py-2 px-2.5 overflow-x-auto no-scrollbar scroll-smooth w-full">
-          <a 
-            href="#" 
-            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${
-              activeSection === 'home'
+          <a
+            href="#"
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${activeSection === 'home'
                 ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
                 : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
-            }`}
+              }`}
           >
             <Home size={18} />
             <span>Home</span>
           </a>
-          <a 
-            href="#about" 
-            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${
-              activeSection === 'about'
+          <a
+            href="#about"
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${activeSection === 'about'
                 ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
                 : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
-            }`}
+              }`}
           >
             <Info size={18} />
             <span>About Us</span>
           </a>
-          <a 
-            href="#products" 
-            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${
-              activeSection === 'products'
+          <a
+            href="#products"
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${activeSection === 'products'
                 ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
                 : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
-            }`}
+              }`}
           >
             <ShoppingBag size={18} />
             <span>Our Product</span>
           </a>
-          <a 
-            href="#gallery" 
-            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${
-              activeSection === 'gallery'
+          <a
+            href="#gallery"
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${activeSection === 'gallery'
                 ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
                 : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
-            }`}
+              }`}
           >
             <Image size={18} />
             <span>Gallery</span>
           </a>
-          <a 
-            href="#why-us" 
-            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${
-              activeSection === 'why-us'
+          <a
+            href="#why-us"
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${activeSection === 'why-us'
                 ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
                 : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
-            }`}
+              }`}
           >
             <Sparkles size={18} />
             <span>Benefits</span>
           </a>
-          <a 
-            href="#testimonials" 
-            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${
-              activeSection === 'testimonials'
+          <a
+            href="#testimonials"
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${activeSection === 'testimonials'
                 ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
                 : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
-            }`}
+              }`}
           >
             <MessageSquare size={18} />
             <span>Testimonial</span>
           </a>
-          <a 
-            href="#faq" 
-            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${
-              activeSection === 'faq'
+          <a
+            href="#faq"
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${activeSection === 'faq'
                 ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
                 : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
-            }`}
+              }`}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-help-circle"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-help-circle"><circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><path d="M12 17h.01" /></svg>
             <span>FAQ</span>
           </a>
-          <a 
-            href="#contact" 
-            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${
-              activeSection === 'contact'
+          <a
+            href="#contact"
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${activeSection === 'contact'
                 ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
                 : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
-            }`}
+              }`}
           >
             <Phone size={18} />
             <span>Contact Us</span>
           </a>
-          <a 
-            href="https://wa.me/6281294924003" 
+          <a
+            href="https://wa.me/6281294924003"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-shrink-0 flex flex-col items-center gap-1 text-brand-dark/70 hover:text-brand-green transition-colors py-1.5 px-3 rounded-xl text-[9px] font-semibold uppercase tracking-wider"
@@ -288,7 +275,7 @@ export default function Navbar() {
             <MessageCircle size={18} />
             <span>Chat</span>
           </a>
-          <button 
+          <button
             onClick={() => setIsOpen(true)}
             className="flex-shrink-0 flex flex-col items-center gap-1 text-brand-dark/70 hover:text-brand-green transition-colors py-1.5 px-3 rounded-xl text-[9px] font-semibold uppercase tracking-wider focus:outline-none cursor-pointer"
           >
