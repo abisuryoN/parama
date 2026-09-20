@@ -60,7 +60,7 @@ export default function Gallery() {
       id: 1,
       title: 'Outdoor Yoga Practice with Parama Grounding Sheet',
       category: 'Outdoor Grounding Sheet',
-      imageSrc: '/gakeri1.jpg',
+      imageSrc: '/galeri/gakeri1.jpg',
       alt: 'Outdoor Yoga Practice with Parama Grounding Sheet | Alas Matras Yoga Outdoor Premium',
       gridClass: 'md:col-span-2 md:row-span-2'
     },
@@ -68,7 +68,7 @@ export default function Gallery() {
       id: 2,
       title: 'Relaxing Yoga Session with Parama Water-Resistant Grounding Sheet',
       category: 'Water-Resistant Protection',
-      imageSrc: '/galeri2.jpg',
+      imageSrc: '/galeri/galeri2.jpg',
       alt: 'Relaxing Yoga Session with Parama Water-Resistant Grounding Sheet | Alas Matras Yoga Outdoor Waterproof',
       gridClass: 'md:col-span-1 md:row-span-1'
     },
@@ -76,7 +76,7 @@ export default function Gallery() {
       id: 3,
       title: 'Yoga Retreat in Nature Using Parama Premium Grounding Sheet',
       category: 'Premium Grounding Sheet',
-      imageSrc: '/galeri3.jpg',
+      imageSrc: '/galeri/galeri3.jpg',
       alt: 'Yoga Retreat in Nature Using Parama Premium Grounding Sheet | Terpal Premium Yoga Parama',
       gridClass: 'md:col-span-1 md:row-span-1'
     },
@@ -84,7 +84,7 @@ export default function Gallery() {
       id: 4,
       title: 'Comfortable Breathwork with Parama Yoga Mat Protection Layer',
       category: 'Yoga Mat Protection Layer',
-      imageSrc: '/galeri4.jpg',
+      imageSrc: '/galeri/galeri4.jpg',
       alt: 'Comfortable Breathwork with Parama Yoga Mat Protection Layer | Pelindung Matras Yoga Outdoor',
       gridClass: 'md:col-span-1 md:row-span-1'
     },
@@ -92,7 +92,7 @@ export default function Gallery() {
       id: 5,
       title: 'Morning Stretch Session with Parama Outdoor Grounding Sheet',
       category: 'Outdoor Grounding Sheet',
-      imageSrc: '/galeri5.jpg',
+      imageSrc: '/galeri/galeri5.jpg',
       alt: 'Morning Stretch Session with Parama Outdoor Grounding Sheet | Alas Yoga Outdoor',
       gridClass: 'md:col-span-1 md:row-span-1'
     },
@@ -100,7 +100,7 @@ export default function Gallery() {
       id: 6,
       title: 'Clean Meditation Space Using Parama Grounding Sheet',
       category: 'Grounding Sheet',
-      imageSrc: '/galeri6.jpg',
+      imageSrc: '/galeri/galeri6.jpg',
       alt: 'Clean Meditation Space Using Parama Grounding Sheet | Alas Matras Premium',
       gridClass: 'md:col-span-1 md:row-span-2'
     },
@@ -108,7 +108,7 @@ export default function Gallery() {
       id: 7,
       title: 'Forest Picnic and Yoga Using Parama Outdoor Grounding Sheet',
       category: 'Outdoor Grounding Sheet',
-      imageSrc: '/galeri7.jpg',
+      imageSrc: '/galeri/galeri7.jpg',
       alt: 'Forest Picnic and Yoga Using Parama Outdoor Grounding Sheet | Alas Matras Camping',
       gridClass: 'md:col-span-2 md:row-span-1'
     },
@@ -116,7 +116,7 @@ export default function Gallery() {
       id: 8,
       title: 'Tranquil Sunset Yoga with Parama Premium Grounding Sheet',
       category: 'Premium Grounding Sheet',
-      imageSrc: '/galeri8.jpg',
+      imageSrc: '/galeri/galeri8.jpg',
       alt: 'Tranquil Sunset Yoga with Parama Premium Grounding Sheet | Terpal Alas Matras Premium',
       gridClass: 'md:col-span-2 md:row-span-1'
     },
@@ -124,8 +124,24 @@ export default function Gallery() {
       id: 9,
       title: 'Mindful Meditation with Parama Yoga Mat Protection Layer',
       category: 'Yoga Mat Protection Layer',
-      imageSrc: '/galeri9.jpg',
+      imageSrc: '/galeri/galeri9.jpg',
       alt: 'Mindful Meditation with Parama Yoga Mat Protection Layer | Pelindung Matras Outdoor',
+      gridClass: 'md:col-span-1 md:row-span-1'
+    },
+    {
+      id: 10,
+      title: 'Peaceful Outdoor Flow with Parama Grounding Sheet',
+      category: 'Outdoor Yoga Experience',
+      imageSrc: '/galeri/galeri10.jpg',
+      alt: 'Peaceful Outdoor Flow with Parama Grounding Sheet | Alas Matras Yoga Outdoor',
+      gridClass: 'md:col-span-1 md:row-span-1'
+    },
+    {
+      id: 11,
+      title: 'Mindful Outdoor Movement with Parama Grounding Sheet',
+      category: 'Mindful Movement',
+      imageSrc: '/galeri/galeri11.jpg',
+      alt: 'Mindful Outdoor Movement with Parama Grounding Sheet | Pelindung Matras Yoga Premium',
       gridClass: 'md:col-span-1 md:row-span-1'
     }
   ];

@@ -61,3 +61,52 @@
   scrollbar-width: none;
   /* Firefox */
 }
+
+/* Marquee Infinite Animations */
+@keyframes marquee-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 36s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marquee-right 36s linear infinite;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .animate-marquee-left {
+    animation-duration: 24s;
+  }
+  .animate-marquee-right {
+    animation-duration: 24s;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .marquee-pause:hover .animate-marquee-left,
+  .marquee-pause:hover .animate-marquee-right {
+    animation-play-state: paused;
+  }
+}

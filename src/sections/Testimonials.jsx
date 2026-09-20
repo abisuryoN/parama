@@ -10,16 +10,16 @@ export default function Testimonials() {
   const [zoomImage, setZoomImage] = useState(null);
   const cardRef = useRef(null);
   const reviews = [
-    { image: '/testimoni1.jpg', alt: 'Parama Outdoor Yoga Grounding Sheet | Alas Matras Yoga Outdoor Premium' },
-    { image: '/testimoni2.jpg', alt: 'Waterproof Yoga Mat Protector | Pelindung Matras Yoga Outdoor' },
-    { image: '/testimoni3.jpg', alt: 'Grounding Sheet for Outdoor Yoga | Alas Matras Waterproof' },
-    { image: '/testimoni4.jpg', alt: 'Parama Terpal Yoga Outdoor | Premium Grounding Sheet' },
-    { image: '/testimoni5.jpg', alt: 'Alas Matras Yoga Outdoor Waterproof | Grounding Sheet Outdoor Yoga Parama' },
-    { image: '/testimoni6.jpg', alt: 'Terpal Yoga Premium Parama | Premium Yoga Mat Protector' },
-    { image: '/testimoni7.jpg', alt: 'Parama Terpal Alas Matras Premium | Waterproof Grounding Sheet' },
-    { image: '/testimoni8.jpg', alt: 'Yoga Mat Protection Layer by Parama | Pelindung Matras Premium' },
-    { image: '/testimoni9.jpg', alt: 'Parama Outdoor Yoga Grounding Sheet | Alas Matras Premium' },
-    { image: '/testimoni10.jpg', alt: 'Grounding Sheet for Outdoor Yoga | Pelindung Matras Yoga Outdoor' }
+    { image: '/testimoni/testimoni1.jpg', alt: 'Parama Outdoor Yoga Grounding Sheet | Alas Matras Yoga Outdoor Premium' },
+    { image: '/testimoni/testimoni2.jpg', alt: 'Waterproof Yoga Mat Protector | Pelindung Matras Yoga Outdoor' },
+    { image: '/testimoni/testimoni3.jpg', alt: 'Grounding Sheet for Outdoor Yoga | Alas Matras Waterproof' },
+    { image: '/testimoni/testimoni4.jpg', alt: 'Parama Terpal Yoga Outdoor | Premium Grounding Sheet' },
+    { image: '/testimoni/testimoni5.jpg', alt: 'Alas Matras Yoga Outdoor Waterproof | Grounding Sheet Outdoor Yoga Parama' },
+    { image: '/testimoni/testimoni6.jpg', alt: 'Terpal Yoga Premium Parama | Premium Yoga Mat Protector' },
+    { image: '/testimoni/testimoni7.jpg', alt: 'Parama Terpal Alas Matras Premium | Waterproof Grounding Sheet' },
+    { image: '/testimoni/testimoni8.jpg', alt: 'Yoga Mat Protection Layer by Parama | Pelindung Matras Premium' },
+    { image: '/testimoni/testimoni9.jpg', alt: 'Parama Outdoor Yoga Grounding Sheet | Alas Matras Premium' },
+    { image: '/testimoni/testimoni10.jpg', alt: 'Grounding Sheet for Outdoor Yoga | Pelindung Matras Yoga Outdoor' }
   ];
 
   const nextSlide = () => {

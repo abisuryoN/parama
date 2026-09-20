@@ -58,7 +58,7 @@ export default function Hero() {
             {/* Main Visual */}
             <div className="relative overflow-hidden rounded-2xl aspect-[3/4] shadow-2xl border border-brand-grey-light bg-brand-cream-soft">
               <img
-                src="/hero1.jpg"
+                src="/hero/hero1.jpg"
                 alt="Parama Outdoor Yoga Grounding Sheet | Alas Matras Yoga Outdoor Premium"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 loading="eager"

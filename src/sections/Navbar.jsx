@@ -1,19 +1,29 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, ArrowUpRight, Home, ShoppingBag, Image, MessageCircle, Info, Sparkles, MessageSquare, Phone } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Home, ShoppingBag, Image, MessageCircle, Info, Sparkles, MessageSquare, Phone, Calendar } from 'lucide-react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(useGSAP);
 
-export default function Navbar() {
+export default function Navbar({ currentRoute = '/', onNavigate }) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const containerRef = useRef(null);
 
-  const [activeSection, setActiveSection] = useState('home');
+  const isEventPage = currentRoute === '/event';
+  const [activeSection, setActiveSection] = useState(isEventPage ? 'event' : 'home');
 
-  // Monitor scroll state for styling updates & Scroll Spy
+  // Monitor scroll state for styling updates & Scroll Spy (when on homepage)
   useEffect(() => {
+    if (isEventPage) {
+      setActiveSection('event');
+      const handleEventScroll = () => {
+        setScrolled(window.scrollY > 20);
+      };
+      window.addEventListener('scroll', handleEventScroll);
+      return () => window.removeEventListener('scroll', handleEventScroll);
+    }
+
     const handleScroll = () => {
       // Scrolled styling check
       if (window.scrollY > 20) {
@@ -42,9 +52,10 @@ export default function Navbar() {
       }
       setActiveSection(currentSection);
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isEventPage]);
 
   // GSAP Entrance Animation
   useGSAP(() => {
@@ -54,29 +65,58 @@ export default function Navbar() {
     );
   }, { scope: containerRef });
 
+  const handleNavClick = (e, href) => {
+    if (href.startsWith('/event')) {
+      if (onNavigate) {
+        e.preventDefault();
+        onNavigate('/event');
+      }
+      setIsOpen(false);
+    } else if (href === '/' || href === '#') {
+      if (onNavigate) {
+        e.preventDefault();
+        onNavigate('/');
+      }
+      setIsOpen(false);
+    } else if (href.startsWith('/#') || href.startsWith('#')) {
+      if (isEventPage) {
+        if (onNavigate) {
+          e.preventDefault();
+          onNavigate(href.startsWith('/#') ? href : `/${href}`);
+        }
+      }
+      setIsOpen(false);
+    }
+  };
+
   const navLinks = [
-    { label: 'About Us', href: '#about' },
-    { label: 'Our Product', href: '#products' },
-    { label: 'Gallery', href: '#gallery' },
-    { label: 'Benefits', href: '#why-us' },
-    { label: 'Testimonial', href: '#testimonials' },
-    { label: 'FAQ', href: '#faq' },
+    { label: 'About Us', href: isEventPage ? '/#about' : '#about', id: 'about' },
+    { label: 'Our Product', href: isEventPage ? '/#products' : '#products', id: 'products' },
+    { label: 'Gallery', href: isEventPage ? '/#gallery' : '#gallery', id: 'gallery' },
+    { label: 'Event', href: '/event', id: 'event', isEvent: true },
+    { label: 'Benefits', href: isEventPage ? '/#why-us' : '#why-us', id: 'why-us' },
+    { label: 'Testimonial', href: isEventPage ? '/#testimonials' : '#testimonials', id: 'testimonials' },
+    { label: 'FAQ', href: isEventPage ? '/#faq' : '#faq', id: 'faq' },
   ];
 
   return (
     <>
       <header
         ref={containerRef}
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${scrolled || isEventPage
           ? 'bg-brand-cream/85 backdrop-blur-md py-4 shadow-sm border-b border-brand-grey-light'
           : 'bg-transparent py-6'
           }`}
       >
         <div className="max-w-[90%] w-full mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="nav-item flex items-center gap-2 group">
+          <a
+            href="/"
+            onClick={(e) => handleNavClick(e, '/')}
+            className="nav-item flex items-center gap-2 group cursor-pointer"
+          >
             <img
-              src="/logo.png"
+              src="/logo/logo.png"
               alt="Parama Outdoor Yoga Grounding Sheet | Alas Matras Yoga Outdoor Premium"
               className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
@@ -86,17 +126,17 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-5 lg:gap-6">
             {navLinks.map((link) => {
-              const linkSection = link.href.replace('#', '') || 'home';
-              const isActive = activeSection === linkSection;
+              const isActive = link.isEvent ? isEventPage : (!isEventPage && activeSection === link.id);
               return (
                 <a
                   key={link.label}
                   href={link.href}
-                  className={`nav-item text-xs uppercase tracking-wider font-bold transition-all duration-300 py-1.5 px-3.5 rounded-full ${isActive
-                      ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
-                      : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={`nav-item text-xs uppercase tracking-wider font-bold transition-all duration-300 py-1.5 px-3.5 rounded-full cursor-pointer ${isActive
+                    ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
+                    : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
                     }`}
                 >
                   {link.label}
@@ -104,10 +144,11 @@ export default function Navbar() {
               );
             })}
             <a
-              href="#contact"
-              className={`nav-item inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm ${activeSection === 'contact'
-                  ? 'bg-brand-green text-brand-cream scale-105'
-                  : 'bg-brand-dark text-brand-cream hover:bg-brand-green'
+              href={isEventPage ? '/#contact' : '#contact'}
+              onClick={(e) => handleNavClick(e, isEventPage ? '/#contact' : '#contact')}
+              className={`nav-item inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm cursor-pointer ${!isEventPage && activeSection === 'contact'
+                ? 'bg-brand-green text-brand-cream scale-105'
+                : 'bg-brand-dark text-brand-cream hover:bg-brand-green'
                 }`}
             >
               Contact Us
@@ -152,16 +193,15 @@ export default function Navbar() {
 
         <nav className="flex flex-col gap-3 text-left">
           {navLinks.map((link) => {
-            const linkSection = link.href.replace('#', '') || 'home';
-            const isActive = activeSection === linkSection;
+            const isActive = link.isEvent ? isEventPage : (!isEventPage && activeSection === link.id);
             return (
               <a
                 key={link.label}
                 href={link.href}
-                onClick={() => setIsOpen(false)}
-                className={`text-sm font-bold transition-all duration-300 py-2.5 px-4 rounded-xl flex items-center justify-between ${isActive
-                    ? 'bg-brand-green text-brand-cream shadow-sm'
-                    : 'text-brand-dark/80 hover:text-brand-green hover:bg-brand-green/5'
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={`text-sm font-bold transition-all duration-300 py-2.5 px-4 rounded-xl flex items-center justify-between cursor-pointer ${isActive
+                  ? 'bg-brand-green text-brand-cream shadow-sm'
+                  : 'text-brand-dark/80 hover:text-brand-green hover:bg-brand-green/5'
                   }`}
               >
                 <span>{link.label}</span>
@@ -170,11 +210,11 @@ export default function Navbar() {
             );
           })}
           <a
-            href="#contact"
-            onClick={() => setIsOpen(false)}
-            className={`inline-flex items-center justify-center gap-2 font-semibold uppercase text-xs tracking-wider py-3 px-5 rounded-full mt-4 shadow-sm transition-all duration-300 ${activeSection === 'contact'
-                ? 'bg-brand-green text-brand-cream scale-105'
-                : 'bg-brand-dark text-brand-cream hover:bg-brand-green'
+            href={isEventPage ? '/#contact' : '#contact'}
+            onClick={(e) => handleNavClick(e, isEventPage ? '/#contact' : '#contact')}
+            className={`inline-flex items-center justify-center gap-2 font-semibold uppercase text-xs tracking-wider py-3 px-5 rounded-full mt-4 shadow-sm transition-all duration-300 cursor-pointer ${!isEventPage && activeSection === 'contact'
+              ? 'bg-brand-green text-brand-cream scale-105'
+              : 'bg-brand-dark text-brand-cream hover:bg-brand-green'
               }`}
           >
             Contact Us
@@ -187,80 +227,99 @@ export default function Navbar() {
       <div className="fixed bottom-5 left-4 right-4 z-40 bg-brand-cream/80 backdrop-blur-lg border border-brand-grey-light/50 rounded-2xl shadow-xl shadow-brand-dark/10 md:hidden overflow-hidden">
         <div className="flex items-center gap-1.5 py-2 px-2.5 overflow-x-auto no-scrollbar scroll-smooth w-full">
           <a
-            href="#"
-            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${activeSection === 'home'
-                ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
-                : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
+            href="/"
+            onClick={(e) => handleNavClick(e, '/')}
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider cursor-pointer ${!isEventPage && activeSection === 'home'
+              ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
+              : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
               }`}
           >
             <Home size={18} />
             <span>Home</span>
           </a>
           <a
-            href="#about"
-            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${activeSection === 'about'
-                ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
-                : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
+            href={isEventPage ? '/#about' : '#about'}
+            onClick={(e) => handleNavClick(e, isEventPage ? '/#about' : '#about')}
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider cursor-pointer ${!isEventPage && activeSection === 'about'
+              ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
+              : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
               }`}
           >
             <Info size={18} />
             <span>About Us</span>
           </a>
           <a
-            href="#products"
-            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${activeSection === 'products'
-                ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
-                : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
+            href={isEventPage ? '/#products' : '#products'}
+            onClick={(e) => handleNavClick(e, isEventPage ? '/#products' : '#products')}
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider cursor-pointer ${!isEventPage && activeSection === 'products'
+              ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
+              : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
               }`}
           >
             <ShoppingBag size={18} />
             <span>Our Product</span>
           </a>
           <a
-            href="#gallery"
-            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${activeSection === 'gallery'
-                ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
-                : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
+            href={isEventPage ? '/#gallery' : '#gallery'}
+            onClick={(e) => handleNavClick(e, isEventPage ? '/#gallery' : '#gallery')}
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider cursor-pointer ${!isEventPage && activeSection === 'gallery'
+              ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
+              : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
               }`}
           >
             <Image size={18} />
             <span>Gallery</span>
           </a>
           <a
-            href="#why-us"
-            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${activeSection === 'why-us'
-                ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
-                : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
+            href="/event"
+            onClick={(e) => handleNavClick(e, '/event')}
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider cursor-pointer ${isEventPage
+              ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
+              : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
+              }`}
+          >
+            <Calendar size={18} />
+            <span>Event</span>
+          </a>
+          <a
+            href={isEventPage ? '/#why-us' : '#why-us'}
+            onClick={(e) => handleNavClick(e, isEventPage ? '/#why-us' : '#why-us')}
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider cursor-pointer ${!isEventPage && activeSection === 'why-us'
+              ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
+              : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
               }`}
           >
             <Sparkles size={18} />
             <span>Benefits</span>
           </a>
           <a
-            href="#testimonials"
-            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${activeSection === 'testimonials'
-                ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
-                : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
+            href={isEventPage ? '/#testimonials' : '#testimonials'}
+            onClick={(e) => handleNavClick(e, isEventPage ? '/#testimonials' : '#testimonials')}
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider cursor-pointer ${!isEventPage && activeSection === 'testimonials'
+              ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
+              : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
               }`}
           >
             <MessageSquare size={18} />
             <span>Testimonial</span>
           </a>
           <a
-            href="#faq"
-            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${activeSection === 'faq'
-                ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
-                : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
+            href={isEventPage ? '/#faq' : '#faq'}
+            onClick={(e) => handleNavClick(e, isEventPage ? '/#faq' : '#faq')}
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider cursor-pointer ${!isEventPage && activeSection === 'faq'
+              ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
+              : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
               }`}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-help-circle"><circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><path d="M12 17h.01" /></svg>
             <span>FAQ</span>
           </a>
           <a
-            href="#contact"
-            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider ${activeSection === 'contact'
-                ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
-                : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
+            href={isEventPage ? '/#contact' : '#contact'}
+            onClick={(e) => handleNavClick(e, isEventPage ? '/#contact' : '#contact')}
+            className={`flex-shrink-0 flex flex-col items-center gap-1 transition-all duration-300 py-1.5 px-3 rounded-xl text-[9px] font-bold uppercase tracking-wider cursor-pointer ${!isEventPage && activeSection === 'contact'
+              ? 'bg-brand-green text-brand-cream shadow-sm scale-105'
+              : 'text-brand-dark/70 hover:text-brand-green hover:bg-brand-green/5'
               }`}
           >
             <Phone size={18} />

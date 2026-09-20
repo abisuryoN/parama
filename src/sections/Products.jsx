@@ -83,27 +83,27 @@ export default function Products() {
       placeholderText: 'Parama Silver Grounding Sheet'
     },
     {
-      id: 'navy',
-      name: 'PARAMA NAVY',
-      alt: 'Parama Navy Grounding Sheet | Alas Matras Yoga Outdoor Premium',
-      description: 'A lightweight grounding sheet that provides practical protection while remaining easy to pack and carry.',
-      subtitle: 'Size: 190 cm × 75 cm | Thickness: Standard',
+      id: 'blacksignature',
+      name: 'PARAMA BLACK SIGNATURE',
+      alt: 'Parama Black Signature Grounding Sheet | Alas Matras Yoga Outdoor Premium',
+      description: 'Our iconic signature edition grounding sheet, offering maximum protection with an exclusive and stylish aesthetic.',
+      subtitle: 'Size: 190 cm × 75 cm | Thickness: Extra Thick',
       specifications: [
         'Size: 190 cm × 75 cm',
-        'Thickness: Standard',
+        'Thickness: Extra Thick',
         'Water-resistant',
-        'Foldable and compact',
-        'Easy to clean',
-        'Suitable for outdoor yoga and wellness activities'
+        'Signature finish & durable',
+        'Easy to clean and wipe',
+        'Suitable for outdoor yoga, picnics, and meditation'
       ],
-      bestFor: 'Casual outdoor practice and everyday use.',
-      placeholderText: 'Parama Navy Grounding Sheet'
+      bestFor: 'Outdoor yoga practice, meditation retreats, and mindful living.',
+      placeholderText: 'Parama Black Signature Grounding Sheet'
     },
     {
-      id: 'blue',
-      name: 'PARAMA BLUE',
-      alt: 'Parama Blue Grounding Sheet | Alas Matras Yoga Outdoor Premium',
-      description: 'A simple and functional grounding sheet designed to help keep your yoga mat cleaner during outdoor sessions.',
+      id: 'sunrise',
+      name: 'PARAMA SUNRISE',
+      alt: 'Parama Sunrise Grounding Sheet | Alas Matras Yoga Outdoor Premium',
+      description: 'A vibrant and energetic grounding sheet designed to brighten your morning outdoor sessions and keep your mat pristine.',
       subtitle: 'Size: 190 cm × 75 cm | Thickness: Standard',
       specifications: [
         'Size: 190 cm × 75 cm',
@@ -111,10 +111,10 @@ export default function Products() {
         'Water-resistant',
         'Lightweight and portable',
         'Easy to fold and store',
-        'Ideal for outdoor yoga and meditation'
+        'Ideal for morning flow, outdoor yoga, and meditation'
       ],
-      bestFor: 'Outdoor yoga, picnics, meditation, and community gatherings.',
-      placeholderText: 'Parama Blue Grounding Sheet'
+      bestFor: 'Morning outdoor yoga, sunrise meditation, beach sessions, and gatherings.',
+      placeholderText: 'Parama Sunrise Grounding Sheet'
     }
   ];
 
@@ -199,10 +199,10 @@ export default function Products() {
                           {/* Photo Container */}
                           <div 
                             className="mb-6 relative overflow-hidden rounded-2xl aspect-square bg-brand-cream-soft border border-brand-grey-light cursor-zoom-in group"
-                            onClick={() => setActiveImage(`/${product.id}.jpg`)}
+                            onClick={() => setActiveImage(`/produk/${product.id}.jpg`)}
                           >
                             <img
-                              src={`/${product.id}.jpg`}
+                              src={`/produk/${product.id}.jpg`}
                               alt={product.alt}
                               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                               loading="lazy"
@@ -288,10 +288,10 @@ export default function Products() {
                     {/* Photo Container */}
                     <div 
                       className="mb-6 relative overflow-hidden rounded-2xl aspect-square bg-brand-cream-soft border border-brand-grey-light cursor-zoom-in group"
-                      onClick={() => setActiveImage(`/${product.id}.jpg`)}
+                      onClick={() => setActiveImage(`/produk/${product.id}.jpg`)}
                     >
                       <img
-                        src={`/${product.id}.jpg`}
+                        src={`/produk/${product.id}.jpg`}
                         alt={product.alt}
                         className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                         loading="lazy"

@@ -1,8 +1,28 @@
 import React from 'react';
 import { Instagram, Send } from 'lucide-react';
 
-export default function Footer() {
+export default function Footer({ currentRoute = '/', onNavigate }) {
   const currentYear = new Date().getFullYear();
+  const isEventPage = currentRoute === '/event';
+
+  const handleLinkClick = (e, href) => {
+    if (href.startsWith('/event')) {
+      if (onNavigate) {
+        e.preventDefault();
+        onNavigate('/event');
+      }
+    } else if (href === '/' || href === '#') {
+      if (onNavigate) {
+        e.preventDefault();
+        onNavigate('/');
+      }
+    } else if (href.startsWith('/#') || href.startsWith('#')) {
+      if (isEventPage && onNavigate) {
+        e.preventDefault();
+        onNavigate(href.startsWith('/#') ? href : `/${href}`);
+      }
+    }
+  };
 
   return (
     <footer className="bg-brand-dark text-brand-cream/80 pt-16 pb-24 md:pb-8 border-t border-brand-grey/20 font-sans">
@@ -10,9 +30,13 @@ export default function Footer() {
 
         {/* Branding Column */}
         <div className="md:col-span-5 text-left flex flex-col items-start">
-          <a href="#" className="flex items-center gap-2 group mb-5">
+          <a
+            href="/"
+            onClick={(e) => handleLinkClick(e, '/')}
+            className="flex items-center gap-2 group mb-5 cursor-pointer"
+          >
             <img
-              src="/logo.png"
+              src="/logo/logo.png"
               alt="Parama Premium Yoga Mat Protection Layer | Terpal Yoga Premium Parama"
               className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
@@ -61,22 +85,67 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-3 text-xs md:text-sm">
             <li>
-              <a href="#about" className="hover:text-brand-green transition-colors duration-200">About Us</a>
+              <a
+                href={isEventPage ? '/#about' : '#about'}
+                onClick={(e) => handleLinkClick(e, isEventPage ? '/#about' : '#about')}
+                className="hover:text-brand-green transition-colors duration-200 cursor-pointer"
+              >
+                About Us
+              </a>
             </li>
             <li>
-              <a href="#products" className="hover:text-brand-green transition-colors duration-200">Our Product</a>
+              <a
+                href={isEventPage ? '/#products' : '#products'}
+                onClick={(e) => handleLinkClick(e, isEventPage ? '/#products' : '#products')}
+                className="hover:text-brand-green transition-colors duration-200 cursor-pointer"
+              >
+                Our Product
+              </a>
             </li>
             <li>
-              <a href="#gallery" className="hover:text-brand-green transition-colors duration-200">Gallery</a>
+              <a
+                href={isEventPage ? '/#gallery' : '#gallery'}
+                onClick={(e) => handleLinkClick(e, isEventPage ? '/#gallery' : '#gallery')}
+                className="hover:text-brand-green transition-colors duration-200 cursor-pointer"
+              >
+                Gallery
+              </a>
             </li>
             <li>
-              <a href="#why-us" className="hover:text-brand-green transition-colors duration-200">Benefits</a>
+              <a
+                href="/event"
+                onClick={(e) => handleLinkClick(e, '/event')}
+                className="hover:text-brand-green font-semibold text-brand-cream transition-colors duration-200 cursor-pointer"
+              >
+                Event
+              </a>
             </li>
             <li>
-              <a href="#testimonials" className="hover:text-brand-green transition-colors duration-200">Testimonial</a>
+              <a
+                href={isEventPage ? '/#why-us' : '#why-us'}
+                onClick={(e) => handleLinkClick(e, isEventPage ? '/#why-us' : '#why-us')}
+                className="hover:text-brand-green transition-colors duration-200 cursor-pointer"
+              >
+                Benefits
+              </a>
             </li>
             <li>
-              <a href="#faq" className="hover:text-brand-green transition-colors duration-200">FAQ</a>
+              <a
+                href={isEventPage ? '/#testimonials' : '#testimonials'}
+                onClick={(e) => handleLinkClick(e, isEventPage ? '/#testimonials' : '#testimonials')}
+                className="hover:text-brand-green transition-colors duration-200 cursor-pointer"
+              >
+                Testimonial
+              </a>
+            </li>
+            <li>
+              <a
+                href={isEventPage ? '/#faq' : '#faq'}
+                onClick={(e) => handleLinkClick(e, isEventPage ? '/#faq' : '#faq')}
+                className="hover:text-brand-green transition-colors duration-200 cursor-pointer"
+              >
+                FAQ
+              </a>
             </li>
           </ul>
         </div>
